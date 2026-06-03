@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aaron Kleinerman | Brand & Growth Strategy</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23C4956A'/></svg>">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --cream: #FAF7F2;
+    --warm-white: #FFFFFF;
+    --stone-50: #FAFAF9;
+    --stone-100: #F5F5F4;
+    --stone-200: #E7E5E4;
+    --stone-300: #D6D3D1;
+    --stone-400: #A8A29E;
+    --stone-500: #78716C;
+    --stone-600: #57534E;
+    --stone-700: #44403C;
+    --stone-800: #292524;
+    --stone-900: #1C1917;
+    --amber: #B45309;
+    --amber-light: #D97706;
+    --amber-glow: #FEF3C7;
+    --amber-deep: #92400E;
+    --sage: #6B8F71;
+    --sage-light: #BBD6BE;
+    --sage-deep: #2D5A34;
+    --terra: #9A3412;
+    --terra-light: #FDBA74;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--stone-800);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .serif { font-family: 'Playfair Display', Georgia, serif; }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(28, 25, 23, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 100;
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-brand {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--amber-light); }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--stone-900);
+    color: white;
+    padding: 140px 40px 100px;
+    position: relative;
+    overflow: hidden;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(180,83,9,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(107,143,113,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--amber-light);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--amber-light);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 28px;
+    color: rgba(255,255,255,0.95);
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--amber-light);
+  }
+  .hero-subtitle {
+    font-size: 17px;
+    color: rgba(255,255,255,0.55);
+    max-width: 600px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    flex-wrap: wrap;
+  }
+  .hero-stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+  }
+  .hero-stat .label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+  }
+
+  /* ===== SECTIONS ===== */
+  .section {
+    padding: 100px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .section-wide {
+    padding: 100px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 16px;
+  }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 400;
+    color: var(--stone-900);
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+  .section h2 em { font-style: italic; color: var(--amber); }
+  .section-intro {
+    font-size: 16px;
+    color: var(--stone-500);
+    max-width: 640px;
+    line-height: 1.8;
+    margin-bottom: 48px;
+  }
+
+  /* ===== DIVIDERS ===== */
+  .divider {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .divider hr {
+    border: none;
+    height: 1px;
+    background: var(--stone-200);
+  }
+
+  /* ===== CARDS ===== */
+  .card {
+    background: var(--warm-white);
+    border: 1px solid var(--stone-200);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(28,25,23,0.04);
+  }
+  .card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--stone-800);
+    margin-bottom: 8px;
+  }
+  .card p {
+    font-size: 14px;
+    color: var(--stone-500);
+    line-height: 1.6;
+  }
+
+  /* ===== SCORECARD ===== */
+  .scorecard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .score-card {
+    background: var(--warm-white);
+    border: 1px solid var(--stone-200);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+  }
+  .score-card .score-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--stone-800);
+    margin-bottom: 8px;
+  }
+  .score-card .score-desc {
+    font-size: 13px;
+    color: var(--stone-500);
+    line-height: 1.6;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  .badge-strong { background: #D1FAE5; color: #065F46; }
+  .badge-ok { background: #FEF3C7; color: #92400E; }
+  .badge-weak { background: #FEE2E2; color: #991B1B; }
+  .badge-bottleneck { background: #FECACA; color: #7F1D1D; }
+
+  /* ===== WORKING / GAPS ===== */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+  .list-card {
+    background: var(--warm-white);
+    border: 1px solid var(--stone-200);
+    border-radius: 16px;
+    padding: 32px;
+  }
+  .list-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .list-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .list-card li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--stone-100);
+    font-size: 14px;
+    color: var(--stone-600);
+    line-height: 1.6;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .list-card li:last-child { border-bottom: none; }
+  .list-card li .icon { flex-shrink: 0; font-size: 16px; margin-top: 2px; }
+  .list-card li strong { color: var(--stone-800); }
+
+  /* ===== VOICE SECTION ===== */
+  .voice-bg {
+    background: var(--stone-900);
+    color: white;
+    padding: 100px 40px;
+  }
+  .voice-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .voice-bg .section-label { color: var(--amber-light); }
+  .voice-bg h2 { color: rgba(255,255,255,0.95); }
+  .voice-bg .section-intro { color: rgba(255,255,255,0.5); }
+  .phrase-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 40px 0;
+  }
+  .phrase {
+    padding: 8px 18px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .phrase-lg {
+    font-size: 18px;
+    padding: 10px 24px;
+    background: rgba(180,83,9,0.2);
+    color: var(--amber-light);
+    border: 1px solid rgba(180,83,9,0.3);
+  }
+  .phrase-md {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .phrase-sm {
+    background: rgba(255,255,255,0.04);
+    color: rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,0.06);
+    font-size: 12px;
+  }
+
+  /* Pillar cards */
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px;
+    margin-top: 40px;
+  }
+  .pillar {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+  }
+  .pillar .p-icon { font-size: 28px; margin-bottom: 10px; }
+  .pillar .p-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 4px;
+  }
+  .pillar .p-count {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ===== CONTENT ENGINE ===== */
+  .engine-flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 16px;
+    align-items: center;
+    margin: 48px 0;
+  }
+  @media (max-width: 768px) {
+    .engine-flow { grid-template-columns: 1fr; }
+    .engine-arrow { transform: rotate(90deg); }
+  }
+  .engine-box {
+    background: var(--warm-white);
+    border: 1px solid var(--stone-200);
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+  }
+  .engine-box .e-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--amber);
+  }
+  .engine-box .e-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--stone-500);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+  .engine-arrow {
+    color: var(--stone-300);
+    font-size: 24px;
+    text-align: center;
+  }
+
+  /* Content type grid */
+  .content-type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .ct-card {
+    background: var(--warm-white);
+    border: 1px solid var(--stone-200);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .ct-card .ct-icon { font-size: 28px; margin-bottom: 12px; }
+  .ct-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--stone-800);
+    margin-bottom: 6px;
+  }
+  .ct-card p {
+    font-size: 12px;
+    color: var(--stone-500);
+    line-height: 1.6;
+  }
+  .ct-card .ct-count {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--amber);
+    margin-top: 8px;
+  }
+
+  /* ===== SYSTEMS & SOPS ===== */
+  .sop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .sop-card {
+    background: var(--warm-white);
+    border: 1px solid var(--stone-200);
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .sop-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--stone-800);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sop-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .sop-card li {
+    font-size: 13px;
+    color: var(--stone-600);
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .sop-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sage);
+  }
+
+  /* ===== REVENUE MATH ===== */
+  .revenue-bg {
+    background: linear-gradient(135deg, var(--stone-900) 0%, #2C2218 100%);
+    color: white;
+    padding: 100px 40px;
+  }
+  .revenue-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .revenue-bg .section-label { color: var(--amber-light); }
+  .revenue-bg h2 { color: rgba(255,255,255,0.95); }
+  .revenue-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .revenue-row .r-label {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    max-width: 450px;
+  }
+  .revenue-row .r-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--amber-light);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .revenue-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0;
+    margin-top: 12px;
+  }
+  .revenue-total .r-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+  }
+  .revenue-total .r-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--amber-light);
+  }
+  .roi-box {
+    background: rgba(180,83,9,0.12);
+    border: 1px solid rgba(180,83,9,0.2);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 32px;
+    text-align: center;
+  }
+  .roi-box p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+  }
+  .roi-box strong { color: var(--amber-light); }
+
+  /* ===== ROADMAP ===== */
+  .phase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  @media (max-width: 768px) { .phase-grid { grid-template-columns: 1fr; } }
+  .phase-card {
+    background: var(--warm-white);
+    border: 2px solid var(--stone-200);
+    border-radius: 20px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .phase-card.primary {
+    border-color: var(--amber);
+    box-shadow: 0 0 0 1px var(--amber), 0 8px 32px rgba(180,83,9,0.08);
+  }
+  .phase-card .phase-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--stone-400);
+    margin-bottom: 8px;
+  }
+  .phase-card .phase-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--stone-900);
+    margin-bottom: 4px;
+  }
+  .phase-card .phase-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--stone-800);
+    margin-bottom: 20px;
+  }
+  .phase-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .phase-card li {
+    font-size: 13px;
+    color: var(--stone-600);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--stone-100);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+  .phase-card li:last-child { border-bottom: none; }
+  .phase-card li .check {
+    color: var(--sage);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .phase-note {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: var(--amber-glow);
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--amber-deep);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  /* ===== WALKAWAY ===== */
+  .walkaway-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .wa-card {
+    background: var(--warm-white);
+    border: 1px solid var(--stone-200);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+  }
+  .wa-card .wa-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--amber);
+  }
+  .wa-card .wa-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--stone-600);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    background: var(--stone-900);
+    color: white;
+    padding: 100px 40px;
+    text-align: center;
+  }
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 16px;
+  }
+  .cta-section p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.5);
+    max-width: 500px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--amber);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .cta-btn:hover { background: var(--amber-light); transform: translateY(-1px); }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: var(--stone-900);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 30px 40px;
+    text-align: center;
+  }
+  .footer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ===== QUOTE BLOCK ===== */
+  .insight-box {
+    background: var(--warm-white);
+    border-left: 3px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .insight-box p {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--stone-700);
+    line-height: 1.6;
+  }
+  .insight-box .source {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--stone-400);
+    margin-top: 8px;
+  }
+
+  /* ===== DOMAINS ===== */
+  .domain-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .domain-item {
+    background: var(--warm-white);
+    border: 1px solid var(--stone-200);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .domain-item.issue { border-color: #FCA5A5; background: #FFF5F5; }
+  .domain-item .d-url { font-size: 13px; font-weight: 600; color: var(--stone-800); }
+  .domain-item .d-desc { font-size: 11px; color: var(--stone-400); }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    .nav { padding: 12px 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 120px 24px 80px; min-height: auto; }
+    .hero-stats { gap: 24px; }
+    .section, .section-wide { padding: 60px 24px; }
+    .voice-bg, .revenue-bg, .cta-section { padding: 60px 24px; }
+    .engine-flow { grid-template-columns: 1fr; }
+    .revenue-row { flex-direction: column; gap: 4px; align-items: flex-start; }
+    .revenue-row .r-value { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-brand">Elevate AI Systems</div>
+  <ul class="nav-links">
+    <li><a href="#snapshot">Snapshot</a></li>
+    <li><a href="#scorecard">Audit</a></li>
+    <li><a href="#voice">Your Voice</a></li>
+    <li><a href="#engine">Content Engine</a></li>
+    <li><a href="#revenue">Revenue</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Brand & Growth Strategy</div>
+    <h1>
+      Aaron, your work <em>transforms lives.</em><br>
+      Let's build the systems<br>
+      that bring people to it.
+    </h1>
+    <p class="hero-subtitle">
+      We analyzed your entire digital presence, listened to 63,000 words of your podcast,
+      and mapped the gap between the quality of your work and the visibility of your brand.
+      Here's what we found.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">20</div>
+        <div class="label">Years of Retreats</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">1,000+</div>
+        <div class="label">Lives Touched</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">15-20</div>
+        <div class="label">Retreats Per Year</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">70+</div>
+        <div class="label">Podcast Episodes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SNAPSHOT -->
+<section class="section" id="snapshot">
+  <div class="section-label">The Snapshot</div>
+  <h2>Where you stand <em>today</em></h2>
+  <p class="section-intro">
+    You're operating at the expertise level of a million-dollar business with the marketing infrastructure of a $200K one. The work is extraordinary. The systems haven't caught up yet.
+  </p>
+
+  <div class="two-col">
+    <div class="list-card">
+      <h3><span style="color: var(--sage);">&#9679;</span> What's Working Beautifully</h3>
+      <ul>
+        <li><span class="icon">&#10003;</span><span><strong>World-class expertise</strong> &mdash; 20 years facilitating retreats globally. Own retreat center in Portugal. ISTA-trained. Internationally recognized authority.</span></li>
+        <li><span class="icon">&#10003;</span><span><strong>High-value clients</strong> &mdash; $48K annual buy-in for 1:1 coaching. 5-7 active clients at any time. This is premium positioning.</span></li>
+        <li><span class="icon">&#10003;</span><span><strong>Active retreat pipeline</strong> &mdash; Nicaragua, Portugal, Colorado, Bali. 15-20 retreats per year across multiple continents.</span></li>
+        <li><span class="icon">&#10003;</span><span><strong>Authentic podcast</strong> &mdash; 70+ episodes of "Love, Sex, and Leadership" with genuine depth and real conversations.</span></li>
+        <li><span class="icon">&#10003;</span><span><strong>Social proof</strong> &mdash; Published author. Masters degree. 1,000+ testimonials worth of work. Genuine credibility.</span></li>
+      </ul>
+    </div>
+    <div class="list-card">
+      <h3><span style="color: var(--terra);">&#9679;</span> Where the Gap Is</h3>
+      <ul>
+        <li><span class="icon">&#9888;</span><span><strong>No lead magnets</strong> &mdash; No downloadable assets pulling new people into your world. Visitors come, look around, leave.</span></li>
+        <li><span class="icon">&#9888;</span><span><strong>70 episodes of gold, unmined</strong> &mdash; Your podcast isn't being repurposed into carousels, reels, blog posts, or emails.</span></li>
+        <li><span class="icon">&#9888;</span><span><strong>YouTube: zero engagement</strong> &mdash; 192 videos, 551 subscribers. No shorts, no clips, no thumbnails optimized for discovery.</span></li>
+        <li><span class="icon">&#9888;</span><span><strong>No organic search presence</strong> &mdash; No blog. No SEO content. All traffic relies on brand-name searches and social links.</span></li>
+        <li><span class="icon">&#9888;</span><span><strong>Domain fragmentation</strong> &mdash; 5+ separate websites splitting your authority instead of concentrating it.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="domain-list" style="margin-top: 32px;">
+    <div class="domain-item">
+      <div class="d-url">aaronkleinerman.com</div>
+      <div class="d-desc">Main site (Ontraport) &mdash; primary</div>
+    </div>
+    <div class="domain-item">
+      <div class="d-url">embody.aaronkleinerman.com</div>
+      <div class="d-desc">Group coaching program</div>
+    </div>
+    <div class="domain-item issue">
+      <div class="d-url">theinitiationjourney.com</div>
+      <div class="d-desc">Men's retreats &mdash; separate brand, dilutes SEO</div>
+    </div>
+    <div class="domain-item issue">
+      <div class="d-url">ecstatictantra.org</div>
+      <div class="d-desc">Practitioner training &mdash; no cross-linking</div>
+    </div>
+    <div class="domain-item issue">
+      <div class="d-url">theintegratedbeing.com</div>
+      <div class="d-desc">Masterclass series &mdash; isolated</div>
+    </div>
+  </div>
+</section>
+
+<!-- SCORECARD -->
+<div class="divider"><hr></div>
+
+<section class="section" id="scorecard">
+  <div class="section-label">External Audit</div>
+  <h2>The <em>honest</em> scorecard</h2>
+  <p class="section-intro">We audited every public-facing asset: website, social, podcast, domains, funnels, and content. Here's where each area stands.</p>
+
+  <div class="scorecard-grid">
+    <div class="score-card">
+      <span class="badge badge-strong">Strong</span>
+      <div class="score-label">Authority & Credibility</div>
+      <div class="score-desc">20 years experience, 1,000+ clients, international bestseller, master's degree. Genuinely world-class positioning.</div>
+    </div>
+    <div class="score-card">
+      <span class="badge badge-strong">Strong</span>
+      <div class="score-label">Product Suite</div>
+      <div class="score-desc">Complete value ladder from free masterclasses to $2,450 retreats to $48K coaching. Well-structured offers.</div>
+    </div>
+    <div class="score-card">
+      <span class="badge badge-strong">Strong</span>
+      <div class="score-label">Social Proof</div>
+      <div class="score-desc">Real depth of experience. Genuine testimonials. Named retreat locations worldwide. Authentic, not manufactured.</div>
+    </div>
+    <div class="score-card">
+      <span class="badge badge-ok">Partial</span>
+      <div class="score-label">Content Engine</div>
+      <div class="score-desc">70+ podcast episodes are gold. But no repurposing system. Content goes out once and dies. YouTube has near-zero engagement.</div>
+    </div>
+    <div class="score-card">
+      <span class="badge badge-ok">Dated</span>
+      <div class="score-label">Website UX</div>
+      <div class="score-desc">Ontraport-built site works but looks dated. 6 free masterclasses with no clear entry point. Visitors don't know where to start.</div>
+    </div>
+    <div class="score-card">
+      <span class="badge badge-weak">Weak</span>
+      <div class="score-label">Funnel & Conversion</div>
+      <div class="score-desc">No visible email nurture. No pricing on offers. Application-only with no context. No lead magnets capturing interest.</div>
+    </div>
+    <div class="score-card">
+      <span class="badge badge-weak">Weak</span>
+      <div class="score-label">SEO & Discovery</div>
+      <div class="score-desc">No blog. No content strategy. No search-optimized pages. All organic traffic relies on people already knowing your name.</div>
+    </div>
+    <div class="score-card">
+      <span class="badge badge-bottleneck">Bottleneck</span>
+      <div class="score-label">Scaling Model</div>
+      <div class="score-desc">Revenue is capped by your personal calendar. Every dollar requires your direct time. No leverage through digital products or automated funnels.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE DNA -->
+<section class="voice-bg" id="voice">
+  <div class="voice-inner">
+    <div class="section-label">Voice Analysis</div>
+    <h2 class="serif">We listened to <em>63,000 words</em><br>of your podcast</h2>
+    <p class="section-intro">
+      We pulled transcripts from 9 episodes of Love, Sex, and Leadership and ran a deep voice analysis.
+      This is what makes your voice uniquely yours &mdash; and the foundation for every piece of content we'd create.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 48px;">
+      <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px;">
+        <div style="font-size: 11px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Tone</div>
+        <div style="font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.9);">Warm Invitational</div>
+        <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px;">You don't command. You open doors. Every teaching is framed as an invitation, never an instruction.</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px;">
+        <div style="font-size: 11px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Teaching Style</div>
+        <div style="font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.9);">Framing Before Feeling</div>
+        <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px;">You give the conceptual frame first, then guide people into embodied experience. Philosophy + practice, inseparable.</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px;">
+        <div style="font-size: 11px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Energy</div>
+        <div style="font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.9);">Grounded Authority</div>
+        <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px;">20 years shows. You don't need to prove anything. Comfortable with silence, mystery, and the divine. Unapologetically spiritual.</div>
+      </div>
+    </div>
+
+    <div style="font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">Your Signature Language</div>
+    <div class="phrase-cloud">
+      <span class="phrase phrase-lg">Love, Sex, and Leadership</span>
+      <span class="phrase phrase-lg">body temple</span>
+      <span class="phrase phrase-lg">the invitation is...</span>
+      <span class="phrase phrase-md">I'd love to hear</span>
+      <span class="phrase phrase-md">the grand organized design</span>
+      <span class="phrase phrase-md">soul navigator</span>
+      <span class="phrase phrase-md">heart-centered leader</span>
+      <span class="phrase phrase-md">embody your true power</span>
+      <span class="phrase phrase-md">lean into your edge</span>
+      <span class="phrase phrase-sm">the lotus from the mud</span>
+      <span class="phrase phrase-sm">what gets to be birthed</span>
+      <span class="phrase phrase-sm">what would it feel like</span>
+      <span class="phrase phrase-sm">awaken your soul's wisdom</span>
+      <span class="phrase phrase-sm">permission to</span>
+    </div>
+
+    <div style="font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; margin-top: 48px;">5 Content Pillars</div>
+    <p style="font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 20px;">Extracted from frequency analysis across all 9 episodes. These are the themes you return to naturally.</p>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <div class="p-icon">&#10084;&#65039;</div>
+        <div class="p-name">Love & Relationship</div>
+        <div class="p-count">411 mentions</div>
+      </div>
+      <div class="pillar">
+        <div class="p-icon">&#9876;&#65039;</div>
+        <div class="p-name">Masculine Awakening</div>
+        <div class="p-count">300 mentions</div>
+      </div>
+      <div class="pillar">
+        <div class="p-icon">&#128524;</div>
+        <div class="p-name">Body & Embodiment</div>
+        <div class="p-count">127 mentions</div>
+      </div>
+      <div class="pillar">
+        <div class="p-icon">&#10024;</div>
+        <div class="p-name">Spirit & Surrender</div>
+        <div class="p-count">109 mentions</div>
+      </div>
+      <div class="pillar">
+        <div class="p-icon">&#127761;</div>
+        <div class="p-name">Shadow & Healing</div>
+        <div class="p-count">102 mentions</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT ENGINE -->
+<section class="section-wide" id="engine">
+  <div style="max-width: 1000px; margin: 0 auto;">
+    <div class="section-label">The Content Engine</div>
+    <h2>70 podcast episodes become <em>200+ pieces</em> of content</h2>
+    <p class="section-intro">
+      You already have the raw material. You've recorded hundreds of hours of your authentic voice. Right now it goes out once and dies. Here's what it becomes with a system.
+    </p>
+
+    <div class="engine-flow">
+      <div class="engine-box">
+        <div class="e-num">70</div>
+        <div class="e-label">Podcast Episodes</div>
+      </div>
+      <div class="engine-arrow">&#10230;</div>
+      <div class="engine-box">
+        <div class="e-num">63K</div>
+        <div class="e-label">Words of Your Voice</div>
+      </div>
+      <div class="engine-arrow">&#10230;</div>
+      <div class="engine-box" style="border-color: var(--amber);">
+        <div class="e-num">200+</div>
+        <div class="e-label">Content Pieces</div>
+      </div>
+    </div>
+
+    <div class="content-type-grid">
+      <div class="ct-card">
+        <div class="ct-icon">&#128444;&#65039;</div>
+        <h4>Instagram Carousels</h4>
+        <p>Quote-driven teaching carousels using your actual words. Branded, in your voice, driving to retreat signups. Not generic motivational posts.</p>
+        <div class="ct-count">30+</div>
+      </div>
+      <div class="ct-card">
+        <div class="ct-icon">&#127909;</div>
+        <h4>Short-Form Reels</h4>
+        <p>Podcast clips, talking-head hooks, breathwork snippets, behind-the-scenes retreat footage. Optimized for discovery.</p>
+        <div class="ct-count">20+</div>
+      </div>
+      <div class="ct-card">
+        <div class="ct-icon">&#128221;</div>
+        <h4>SEO Blog Posts</h4>
+        <p>Long-form articles targeting searches like "men's retreats," "embodiment coaching," "tantric leadership." Driving organic traffic.</p>
+        <div class="ct-count">8+</div>
+      </div>
+      <div class="ct-card">
+        <div class="ct-icon">&#127873;</div>
+        <h4>Lead Magnets</h4>
+        <p>"The Body Temple Guide," "Shadow Inventory," "Love, Sex & Leadership Self-Assessment." Email capture tools that match your teaching.</p>
+        <div class="ct-count">2-3</div>
+      </div>
+      <div class="ct-card">
+        <div class="ct-icon">&#9993;&#65039;</div>
+        <h4>Email Sequences</h4>
+        <p>Welcome nurture, retreat launch campaigns, weekly wisdom drops. All wired to Ontraport, all in your voice.</p>
+        <div class="ct-count">3-4</div>
+      </div>
+      <div class="ct-card">
+        <div class="ct-icon">&#127916;</div>
+        <h4>YouTube Shorts</h4>
+        <p>Clips from existing 192 videos. Optimized thumbnails. Shorts from podcast highlights. Turning a dead channel into a discovery engine.</p>
+        <div class="ct-count">40+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEMS & SOPS -->
+<div class="divider"><hr></div>
+
+<section class="section" id="systems">
+  <div class="section-label">Systems & SOPs</div>
+  <h2>One person. <em>Clear playbooks.</em><br>Everything runs without you.</h2>
+  <p class="section-intro">
+    We don't just create content. We build the machine that creates it, the workflows that run it, and the SOPs that mean one person (or one AI) can keep it going after we leave.
+  </p>
+
+  <div class="sop-grid">
+    <div class="sop-card">
+      <h4>&#128197; Content Calendar SOP</h4>
+      <ul>
+        <li>Weekly posting rhythm tied to retreat schedule</li>
+        <li>Monday: teaching carousel (Masculine Awakening)</li>
+        <li>Tuesday: embodiment reel (breathwork, practice)</li>
+        <li>Thursday: relationship / love carousel</li>
+        <li>Friday: shadow / truth-bomb reel</li>
+        <li>Sunday: podcast clip repurpose</li>
+        <li>Each piece traced to a content pillar + revenue goal</li>
+      </ul>
+    </div>
+    <div class="sop-card">
+      <h4>&#127911; Podcast-to-Content Pipeline</h4>
+      <ul>
+        <li>Episode drops &rarr; auto-transcribed (free)</li>
+        <li>AI extracts 3-5 quotable moments per episode</li>
+        <li>Quotes routed to carousel templates</li>
+        <li>Key clips cut into 30-60s reels</li>
+        <li>Blog post drafted from transcript themes</li>
+        <li>One episode = 8-10 content pieces</li>
+      </ul>
+    </div>
+    <div class="sop-card">
+      <h4>&#9992;&#65039; Retreat Launch Playbook</h4>
+      <ul>
+        <li>12-week launch sequence per retreat</li>
+        <li>Email drip: 8 emails from announcement to close</li>
+        <li>Social campaign: countdown carousels + reels</li>
+        <li>Testimonial assets from past retreaters</li>
+        <li>Urgency triggers: early-bird, limited spots, alumni pricing</li>
+        <li>Reusable for every retreat, every location</li>
+      </ul>
+    </div>
+    <div class="sop-card">
+      <h4>&#128200; Lead Magnet Funnel</h4>
+      <ul>
+        <li>Landing page on aaronkleinerman.com</li>
+        <li>Downloadable guide (from your content pillars)</li>
+        <li>Ontraport email capture + tag</li>
+        <li>5-email welcome sequence in your voice</li>
+        <li>Soft CTA to retreat or free masterclass</li>
+        <li>Automated, runs 24/7, fills your list while you sleep</li>
+      </ul>
+    </div>
+    <div class="sop-card">
+      <h4>&#128373;&#65039; Brand Consolidation</h4>
+      <ul>
+        <li>Audit all 5+ domains for redundancy</li>
+        <li>Redirect strategy: funnel all traffic to one hub</li>
+        <li>Cross-linking architecture for SEO juice</li>
+        <li>Unified visual identity across platforms</li>
+        <li>One "brand bible" your team can follow</li>
+        <li>One domain. One authority. One searchable brand.</li>
+      </ul>
+    </div>
+    <div class="sop-card">
+      <h4>&#129302; AI-Assisted (Human-Led)</h4>
+      <ul>
+        <li>AI drafts in your voice (from voice library)</li>
+        <li>You or your person reviews &amp; approves</li>
+        <li>Nothing posts without human eyes</li>
+        <li>AI handles volume; you handle vibe</li>
+        <li>SOPs documented so anyone can follow</li>
+        <li>Your preference: human touch first, AI efficiency behind</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- REVENUE MATH -->
+<section class="revenue-bg" id="revenue">
+  <div class="revenue-inner">
+    <div class="section-label">The Revenue Math</div>
+    <h2 class="serif">What this <em>actually means</em><br>in dollars</h2>
+
+    <div style="margin-top: 48px;">
+      <div class="revenue-row">
+        <span class="r-label">If each retreat adds just 3 more participants (at ~$2,200)</span>
+        <span class="r-value">+$6,600</span>
+      </div>
+      <div class="revenue-row">
+        <span class="r-label">Across 15 retreats per year</span>
+        <span class="r-value">+$99,000/yr</span>
+      </div>
+      <div class="revenue-row">
+        <span class="r-label">If better marketing attracts 1 additional $48K coaching client</span>
+        <span class="r-value">+$48,000/yr</span>
+      </div>
+      <div class="revenue-row">
+        <span class="r-label">If lead magnets convert 2% of followers into course/program buyers</span>
+        <span class="r-value">+$100K-$150K</span>
+      </div>
+      <div class="revenue-total">
+        <span class="r-label">Conservative additional revenue</span>
+        <span class="r-value">+$247K/yr</span>
+      </div>
+    </div>
+
+    <div class="roi-box">
+      <p>
+        A $10K investment that produces even <strong>one additional coaching client</strong> pays for itself <strong>4.8x over</strong>.
+        Three extra retreat signups per cycle covers it <strong>within the first retreat</strong>.
+        This isn't a cost &mdash; it's the most leveraged spend in your business.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="section" id="roadmap">
+  <div class="section-label">The Roadmap</div>
+  <h2>Two phases. <em>Clear deliverables.</em><br>Everything is yours to keep.</h2>
+  <p class="section-intro">
+    Nothing is locked behind a platform. Every system, template, and SOP is yours. After 3 months, you or your team can run it independently. We build the machine &mdash; you drive it.
+  </p>
+
+  <div class="phase-grid">
+    <div class="phase-card">
+      <div class="phase-label">Phase 1 &mdash; Starting Point</div>
+      <div class="phase-price">$2,000</div>
+      <div class="phase-title">The Deep Audit</div>
+      <ul>
+        <li><span class="check">&#10003;</span><span><strong>Voice Analysis Report</strong> &mdash; your signature phrases, content pillars, and tone mapped from 63K words</span></li>
+        <li><span class="check">&#10003;</span><span><strong>Competitive Landscape</strong> &mdash; how you compare to other men's retreat leaders in SEO, social, and positioning</span></li>
+        <li><span class="check">&#10003;</span><span><strong>SEO Opportunity Map</strong> &mdash; keywords and content topics that could drive organic traffic to retreats</span></li>
+        <li><span class="check">&#10003;</span><span><strong>30-Day Content Calendar</strong> &mdash; ready-to-execute posting schedule tied to retreat launches</span></li>
+        <li><span class="check">&#10003;</span><span><strong>3 Sample Carousels</strong> &mdash; Instagram carousels in your voice, driving to retreat signups</span></li>
+        <li><span class="check">&#10003;</span><span><strong>Lead Magnet Wireframe</strong> &mdash; downloadable asset designed to capture emails and nurture toward retreats</span></li>
+        <li><span class="check">&#10003;</span><span><strong>90-Minute Strategy Session</strong> &mdash; walk through findings, prioritize, plan next steps</span></li>
+      </ul>
+      <div class="phase-note">This $2,000 carries over in full to Phase 2 if you proceed.</div>
+    </div>
+    <div class="phase-card primary">
+      <div class="phase-label">Phase 2 &mdash; The Full Build</div>
+      <div class="phase-price">$10,000</div>
+      <div class="phase-title">3-Month Growth Container</div>
+      <ul>
+        <li><span class="check">&#10003;</span><span><strong>Month 1: Foundation</strong> &mdash; Voice library, content system, 10 branded carousels, email capture wired to Ontraport, lead magnet live</span></li>
+        <li><span class="check">&#10003;</span><span><strong>Month 2: Engine</strong> &mdash; Retreat launch sequence (Colorado Oct), 4 SEO blog posts, YouTube shorts strategy, 10 more carousels</span></li>
+        <li><span class="check">&#10003;</span><span><strong>Month 3: Scale + Handoff</strong> &mdash; Second lead magnet, full SOP documentation, team training, 10 more carousels, everything handed over</span></li>
+        <li><span class="check">&#10003;</span><span><strong>Retreat launch playbook</strong> &mdash; reusable for every retreat, every location</span></li>
+        <li><span class="check">&#10003;</span><span><strong>Brand consolidation</strong> &mdash; domain strategy, unified visual identity, cross-linking</span></li>
+        <li><span class="check">&#10003;</span><span><strong>Weekly strategy calls</strong> &mdash; 30-minute check-ins to review, adjust, optimize</span></li>
+      </ul>
+      <div class="phase-note">$2K audit carries over. Remaining: $8K ($2,667/mo for 3 months or in full with $500 off).</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU WALK AWAY WITH -->
+<div class="divider"><hr></div>
+
+<section class="section">
+  <div class="section-label">After 3 Months</div>
+  <h2>What you <em>walk away with</em></h2>
+  <p class="section-intro">
+    Everything below is yours. Not locked behind a subscription. Not dependent on us. Yours to keep, run, and evolve.
+  </p>
+
+  <div class="walkaway-grid">
+    <div class="wa-card">
+      <div class="wa-num">30+</div>
+      <div class="wa-label">Branded Carousels</div>
+    </div>
+    <div class="wa-card">
+      <div class="wa-num">90</div>
+      <div class="wa-label">Days of Content<br>Planned & Posted</div>
+    </div>
+    <div class="wa-card">
+      <div class="wa-num">8+</div>
+      <div class="wa-label">SEO Blog Posts<br>Driving Traffic</div>
+    </div>
+    <div class="wa-card">
+      <div class="wa-num">2</div>
+      <div class="wa-label">Lead Magnets<br>Capturing Emails</div>
+    </div>
+    <div class="wa-card">
+      <div class="wa-num">1</div>
+      <div class="wa-label">Retreat Launch<br>Playbook</div>
+    </div>
+    <div class="wa-card">
+      <div class="wa-num">&#8734;</div>
+      <div class="wa-label">SOPs Your Team<br>Can Run Forever</div>
+    </div>
+  </div>
+
+  <div class="insight-box" style="margin-top: 48px;">
+    <p>"The quality of your work is extraordinary. The systems that bring people to that work just haven't caught up yet. That's all this is &mdash; closing the gap."</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-label" style="color: var(--amber-light);">Next Step</div>
+  <h2 class="serif">Ready to <em>close the gap?</em></h2>
+  <p>Let's start with the $2K audit. You'll see exactly what's possible before committing to anything more.</p>
+  <a href="https://cal.com/elevateai/discovery-call" class="cta-btn">Book a Call with Sunny</a>
+  <p style="font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 16px;">No pressure. No pitch. Just a conversation about what makes sense for you.</p>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>Prepared for Aaron Kleinerman by Elevate AI Systems &middot; June 2026</p>
+  <p style="margin-top: 4px;">This page is private and not indexed by search engines.</p>
+</div>
+
+</body>
+</html>
