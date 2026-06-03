@@ -14,7 +14,6 @@
   :root {
     --cream: #FAF7F2;
     --warm-white: #FFFFFF;
-    --stone-50: #FAFAF9;
     --stone-100: #F5F5F4;
     --stone-200: #E7E5E4;
     --stone-300: #D6D3D1;
@@ -32,7 +31,6 @@
     --sage-light: #BBD6BE;
     --sage-deep: #2D5A34;
     --terra: #9A3412;
-    --terra-light: #FDBA74;
   }
 
   html { scroll-behavior: smooth; scroll-padding-top: 70px; }
@@ -47,730 +45,277 @@
 
   .serif { font-family: 'Playfair Display', Georgia, serif; }
 
-  /* ===== NAV ===== */
+  /* NAV */
   .nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: rgba(28, 25, 23, 0.95);
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(28,25,23,0.95);
     backdrop-filter: blur(20px);
     z-index: 100;
     padding: 14px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; justify-content: space-between; align-items: center;
   }
-  .nav-brand {
-    font-size: 13px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.7);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-  .nav-links {
-    display: flex;
-    gap: 28px;
-    list-style: none;
-  }
-  .nav-links a {
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: color 0.3s;
-  }
+  .nav-brand { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7); letter-spacing: 2px; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s; }
   .nav-links a:hover { color: var(--amber-light); }
 
-  /* ===== HERO ===== */
+  /* HERO */
   .hero {
-    background: var(--stone-900);
-    color: white;
+    background: var(--stone-900); color: white;
     padding: 140px 40px 100px;
-    position: relative;
-    overflow: hidden;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
+    position: relative; overflow: hidden;
+    min-height: 90vh; display: flex; align-items: center;
   }
   .hero::before {
-    content: '';
-    position: absolute;
-    top: -30%;
-    right: -15%;
-    width: 700px;
-    height: 700px;
+    content: ''; position: absolute; top: -30%; right: -15%;
+    width: 700px; height: 700px;
     background: radial-gradient(circle, rgba(180,83,9,0.08) 0%, transparent 70%);
     border-radius: 50%;
   }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -20%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(107,143,113,0.06) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .hero-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
+  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
   .hero-eyebrow {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--amber-light);
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--amber-light); margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
   }
-  .hero-eyebrow::before {
-    content: '';
-    width: 40px;
-    height: 1px;
-    background: var(--amber-light);
-  }
+  .hero-eyebrow::before { content: ''; width: 40px; height: 1px; background: var(--amber-light); }
   .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 28px;
-    color: rgba(255,255,255,0.95);
+    font-size: clamp(36px, 5vw, 56px); font-weight: 400; line-height: 1.2;
+    margin-bottom: 28px; color: rgba(255,255,255,0.95);
   }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--amber-light);
-  }
-  .hero-subtitle {
-    font-size: 17px;
-    color: rgba(255,255,255,0.55);
-    max-width: 600px;
-    line-height: 1.8;
-    font-weight: 300;
-  }
-  .hero-stats {
-    display: flex;
-    gap: 48px;
-    margin-top: 56px;
-    padding-top: 40px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    flex-wrap: wrap;
-  }
-  .hero-stat .num {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: rgba(255,255,255,0.9);
-  }
-  .hero-stat .label {
-    font-size: 11px;
-    color: rgba(255,255,255,0.4);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-top: 4px;
-  }
+  .hero h1 em { font-style: italic; color: var(--amber-light); }
+  .hero-subtitle { font-size: 17px; color: rgba(255,255,255,0.55); max-width: 600px; line-height: 1.8; font-weight: 300; }
+  .hero-stats { display: flex; gap: 48px; margin-top: 56px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; }
+  .hero-stat .num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: rgba(255,255,255,0.9); }
+  .hero-stat .label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; }
 
-  /* ===== SECTIONS ===== */
-  .section {
-    padding: 100px 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  .section-wide {
-    padding: 100px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .section-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin-bottom: 16px;
-  }
-  .section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 4vw, 40px);
-    font-weight: 400;
-    color: var(--stone-900);
-    margin-bottom: 20px;
-    line-height: 1.3;
-  }
+  /* SECTIONS */
+  .section { padding: 100px 40px; max-width: 1000px; margin: 0 auto; }
+  .section-wide { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
+  .section-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; }
+  .section h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 400; color: var(--stone-900); margin-bottom: 20px; line-height: 1.3; }
   .section h2 em { font-style: italic; color: var(--amber); }
-  .section-intro {
-    font-size: 16px;
-    color: var(--stone-500);
-    max-width: 640px;
-    line-height: 1.8;
-    margin-bottom: 48px;
+  .section-intro { font-size: 16px; color: var(--stone-500); max-width: 640px; line-height: 1.8; margin-bottom: 48px; }
+
+  .divider { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
+  .divider hr { border: none; height: 1px; background: var(--stone-200); }
+
+  /* CARDS */
+  .card { background: var(--warm-white); border: 1px solid var(--stone-200); border-radius: 16px; padding: 32px; box-shadow: 0 1px 3px rgba(28,25,23,0.04); }
+  .card h3 { font-size: 15px; font-weight: 700; color: var(--stone-800); margin-bottom: 8px; }
+  .card p { font-size: 14px; color: var(--stone-500); line-height: 1.6; }
+
+  /* PERSONAL NOTE */
+  .personal-bg {
+    background: linear-gradient(135deg, #1C1917 0%, #2C2218 100%);
+    padding: 80px 40px;
+  }
+  .personal-inner {
+    max-width: 700px; margin: 0 auto;
+    display: flex; gap: 32px; align-items: flex-start;
+  }
+  .personal-avatar {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: var(--amber); display: flex; align-items: center; justify-content: center;
+    font-size: 28px; font-weight: 700; color: white; flex-shrink: 0;
+    font-family: 'Playfair Display', serif;
+  }
+  .personal-text p {
+    font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 16px;
+  }
+  .personal-text p:last-child { margin-bottom: 0; }
+  .personal-text strong { color: rgba(255,255,255,0.9); }
+  .personal-name {
+    font-size: 13px; font-weight: 600; color: var(--amber-light);
+    margin-top: 16px; letter-spacing: 0.5px;
   }
 
-  /* ===== DIVIDERS ===== */
-  .divider {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 40px;
+  /* PHILOSOPHY */
+  .philosophy-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; margin-top: 32px;
   }
-  .divider hr {
-    border: none;
-    height: 1px;
-    background: var(--stone-200);
+  .phil-card {
+    background: var(--warm-white); border: 2px solid var(--stone-200);
+    border-radius: 16px; padding: 28px;
   }
+  .phil-card h4 { font-size: 15px; font-weight: 700; color: var(--stone-800); margin-bottom: 8px; }
+  .phil-card p { font-size: 13px; color: var(--stone-500); line-height: 1.6; }
 
-  /* ===== CARDS ===== */
-  .card {
-    background: var(--warm-white);
-    border: 1px solid var(--stone-200);
-    border-radius: 16px;
-    padding: 32px;
-    box-shadow: 0 1px 3px rgba(28,25,23,0.04);
-  }
-  .card h3 {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--stone-800);
-    margin-bottom: 8px;
-  }
-  .card p {
-    font-size: 14px;
-    color: var(--stone-500);
-    line-height: 1.6;
-  }
-
-  /* ===== SCORECARD ===== */
-  .scorecard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-  }
-  .score-card {
-    background: var(--warm-white);
-    border: 1px solid var(--stone-200);
-    border-radius: 12px;
-    padding: 24px;
-    position: relative;
-  }
-  .score-card .score-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--stone-800);
-    margin-bottom: 8px;
-  }
-  .score-card .score-desc {
-    font-size: 13px;
-    color: var(--stone-500);
-    line-height: 1.6;
-  }
-  .badge {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 4px;
-    margin-bottom: 12px;
-  }
+  /* SCORECARD */
+  .scorecard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .score-card { background: var(--warm-white); border: 1px solid var(--stone-200); border-radius: 12px; padding: 24px; }
+  .score-card .score-label { font-size: 13px; font-weight: 600; color: var(--stone-800); margin-bottom: 8px; }
+  .score-card .score-desc { font-size: 13px; color: var(--stone-500); line-height: 1.6; }
+  .badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 12px; }
   .badge-strong { background: #D1FAE5; color: #065F46; }
   .badge-ok { background: #FEF3C7; color: #92400E; }
-  .badge-weak { background: #FEE2E2; color: #991B1B; }
-  .badge-bottleneck { background: #FECACA; color: #7F1D1D; }
+  .badge-opp { background: #DBEAFE; color: #1E40AF; }
 
-  /* ===== WORKING / GAPS ===== */
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
+  /* TWO COL */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
-  .list-card {
-    background: var(--warm-white);
-    border: 1px solid var(--stone-200);
-    border-radius: 16px;
-    padding: 32px;
-  }
-  .list-card h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .list-card ul {
-    list-style: none;
-    padding: 0;
-  }
-  .list-card li {
-    padding: 12px 0;
-    border-bottom: 1px solid var(--stone-100);
-    font-size: 14px;
-    color: var(--stone-600);
-    line-height: 1.6;
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
+  .list-card { background: var(--warm-white); border: 1px solid var(--stone-200); border-radius: 16px; padding: 32px; }
+  .list-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .list-card ul { list-style: none; padding: 0; }
+  .list-card li { padding: 12px 0; border-bottom: 1px solid var(--stone-100); font-size: 14px; color: var(--stone-600); line-height: 1.6; display: flex; gap: 10px; align-items: flex-start; }
   .list-card li:last-child { border-bottom: none; }
   .list-card li .icon { flex-shrink: 0; font-size: 16px; margin-top: 2px; }
   .list-card li strong { color: var(--stone-800); }
 
-  /* ===== VOICE SECTION ===== */
-  .voice-bg {
-    background: var(--stone-900);
-    color: white;
-    padding: 100px 40px;
-  }
-  .voice-inner {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
+  /* VOICE */
+  .voice-bg { background: var(--stone-900); color: white; padding: 100px 40px; }
+  .voice-inner { max-width: 1000px; margin: 0 auto; }
   .voice-bg .section-label { color: var(--amber-light); }
   .voice-bg h2 { color: rgba(255,255,255,0.95); }
   .voice-bg .section-intro { color: rgba(255,255,255,0.5); }
-  .phrase-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 40px 0;
-  }
-  .phrase {
-    padding: 8px 18px;
-    border-radius: 24px;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  .phrase-lg {
-    font-size: 18px;
-    padding: 10px 24px;
-    background: rgba(180,83,9,0.2);
-    color: var(--amber-light);
-    border: 1px solid rgba(180,83,9,0.3);
-  }
-  .phrase-md {
-    background: rgba(255,255,255,0.08);
-    color: rgba(255,255,255,0.7);
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  .phrase-sm {
-    background: rgba(255,255,255,0.04);
-    color: rgba(255,255,255,0.4);
-    border: 1px solid rgba(255,255,255,0.06);
-    font-size: 12px;
-  }
-
-  /* Pillar cards */
-  .pillar-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 12px;
-    margin-top: 40px;
-  }
-  .pillar {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    padding: 24px 16px;
-    text-align: center;
-  }
+  .phrase-cloud { display: flex; flex-wrap: wrap; gap: 10px; margin: 40px 0; }
+  .phrase { padding: 8px 18px; border-radius: 24px; font-size: 14px; font-weight: 500; }
+  .phrase-lg { font-size: 18px; padding: 10px 24px; background: rgba(180,83,9,0.2); color: var(--amber-light); border: 1px solid rgba(180,83,9,0.3); }
+  .phrase-md { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.1); }
+  .phrase-sm { background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.06); font-size: 12px; }
+  .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 40px; }
+  .pillar { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px 16px; text-align: center; }
   .pillar .p-icon { font-size: 28px; margin-bottom: 10px; }
-  .pillar .p-name {
-    font-size: 13px;
-    font-weight: 700;
-    color: rgba(255,255,255,0.85);
-    margin-bottom: 4px;
-  }
-  .pillar .p-count {
-    font-size: 11px;
-    color: rgba(255,255,255,0.35);
-  }
+  .pillar .p-name { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.85); margin-bottom: 4px; }
+  .pillar .p-count { font-size: 11px; color: rgba(255,255,255,0.35); }
 
-  /* ===== CONTENT ENGINE ===== */
-  .engine-flow {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr auto 1fr;
-    gap: 16px;
-    align-items: center;
-    margin: 48px 0;
+  /* AUDIT DEEP DIVE */
+  .audit-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; margin-top: 40px;
   }
-  @media (max-width: 768px) {
-    .engine-flow { grid-template-columns: 1fr; }
-    .engine-arrow { transform: rotate(90deg); }
+  .audit-card {
+    background: var(--warm-white); border: 1px solid var(--stone-200);
+    border-radius: 16px; padding: 28px; position: relative;
+    border-top: 3px solid var(--amber);
   }
-  .engine-box {
-    background: var(--warm-white);
-    border: 1px solid var(--stone-200);
-    border-radius: 16px;
-    padding: 28px;
-    text-align: center;
+  .audit-card .audit-num {
+    font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700;
+    color: var(--amber); margin-bottom: 8px;
   }
-  .engine-box .e-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--amber);
-  }
-  .engine-box .e-label {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--stone-500);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 4px;
-  }
-  .engine-arrow {
-    color: var(--stone-300);
-    font-size: 24px;
-    text-align: center;
-  }
+  .audit-card h4 { font-size: 15px; font-weight: 700; color: var(--stone-800); margin-bottom: 8px; }
+  .audit-card p { font-size: 13px; color: var(--stone-500); line-height: 1.6; }
 
-  /* Content type grid */
-  .content-type-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    margin-top: 32px;
+  /* RETREAT HERO */
+  .retreat-hero-bg {
+    background: linear-gradient(135deg, #1C1917 0%, #2C2218 50%, #1a1510 100%);
+    padding: 100px 40px; color: white; position: relative; overflow: hidden;
   }
-  .ct-card {
-    background: var(--warm-white);
-    border: 1px solid var(--stone-200);
-    border-radius: 12px;
-    padding: 24px;
-  }
-  .ct-card .ct-icon { font-size: 28px; margin-bottom: 12px; }
-  .ct-card h4 {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--stone-800);
-    margin-bottom: 6px;
-  }
-  .ct-card p {
-    font-size: 12px;
-    color: var(--stone-500);
-    line-height: 1.6;
-  }
-  .ct-card .ct-count {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--amber);
-    margin-top: 8px;
-  }
-
-  /* ===== SYSTEMS & SOPS ===== */
-  .sop-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  .sop-card {
-    background: var(--warm-white);
-    border: 1px solid var(--stone-200);
-    border-radius: 16px;
-    padding: 28px;
-  }
-  .sop-card h4 {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--stone-800);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .sop-card ul {
-    list-style: none;
-    padding: 0;
-  }
-  .sop-card li {
-    font-size: 13px;
-    color: var(--stone-600);
-    padding: 6px 0;
-    padding-left: 20px;
-    position: relative;
-    line-height: 1.5;
-  }
-  .sop-card li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 12px;
-    width: 6px;
-    height: 6px;
+  .retreat-hero-bg::before {
+    content: ''; position: absolute; top: -20%; right: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(180,83,9,0.1) 0%, transparent 70%);
     border-radius: 50%;
-    background: var(--sage);
   }
+  .retreat-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+  .retreat-hero-inner .section-label { color: var(--amber-light); }
+  .retreat-hero-inner h2 { color: rgba(255,255,255,0.95); font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 40px); margin-bottom: 20px; line-height: 1.3; }
+  .retreat-hero-inner h2 em { color: var(--amber-light); font-style: italic; }
+  .retreat-steps {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px; margin-top: 40px;
+  }
+  .retreat-step {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 24px; text-align: center;
+  }
+  .retreat-step .rs-week { font-size: 11px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .retreat-step .rs-title { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.85); margin-bottom: 6px; }
+  .retreat-step .rs-desc { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.5; }
 
-  /* ===== REVENUE MATH ===== */
-  .revenue-bg {
-    background: linear-gradient(135deg, var(--stone-900) 0%, #2C2218 100%);
-    color: white;
-    padding: 100px 40px;
-  }
-  .revenue-inner {
-    max-width: 800px;
-    margin: 0 auto;
-  }
+  /* CONTENT ENGINE */
+  .engine-flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 16px; align-items: center; margin: 48px 0; }
+  @media (max-width: 768px) { .engine-flow { grid-template-columns: 1fr; } .engine-arrow { transform: rotate(90deg); } }
+  .engine-box { background: var(--warm-white); border: 1px solid var(--stone-200); border-radius: 16px; padding: 28px; text-align: center; }
+  .engine-box .e-num { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--amber); }
+  .engine-box .e-label { font-size: 12px; font-weight: 600; color: var(--stone-500); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+  .engine-arrow { color: var(--stone-300); font-size: 24px; text-align: center; }
+  .content-type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 32px; }
+  .ct-card { background: var(--warm-white); border: 1px solid var(--stone-200); border-radius: 12px; padding: 24px; }
+  .ct-card .ct-icon { font-size: 28px; margin-bottom: 12px; }
+  .ct-card h4 { font-size: 14px; font-weight: 700; color: var(--stone-800); margin-bottom: 6px; }
+  .ct-card p { font-size: 12px; color: var(--stone-500); line-height: 1.6; }
+
+  /* SYSTEMS */
+  .sop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .sop-card { background: var(--warm-white); border: 1px solid var(--stone-200); border-radius: 16px; padding: 28px; }
+  .sop-card h4 { font-size: 15px; font-weight: 700; color: var(--stone-800); margin-bottom: 12px; }
+  .sop-card ul { list-style: none; padding: 0; }
+  .sop-card li { font-size: 13px; color: var(--stone-600); padding: 6px 0; padding-left: 20px; position: relative; line-height: 1.5; }
+  .sop-card li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--sage); }
+
+  /* REVENUE */
+  .revenue-bg { background: linear-gradient(135deg, var(--stone-900) 0%, #2C2218 100%); color: white; padding: 100px 40px; }
+  .revenue-inner { max-width: 800px; margin: 0 auto; }
   .revenue-bg .section-label { color: var(--amber-light); }
   .revenue-bg h2 { color: rgba(255,255,255,0.95); }
-  .revenue-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .revenue-row .r-label {
-    font-size: 15px;
-    color: rgba(255,255,255,0.6);
-    max-width: 450px;
-  }
-  .revenue-row .r-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--amber-light);
-    text-align: right;
-    white-space: nowrap;
-  }
-  .revenue-total {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 28px 0;
-    margin-top: 12px;
-  }
-  .revenue-total .r-label {
-    font-size: 16px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.8);
-  }
-  .revenue-total .r-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--amber-light);
-  }
-  .roi-box {
-    background: rgba(180,83,9,0.12);
-    border: 1px solid rgba(180,83,9,0.2);
-    border-radius: 12px;
-    padding: 24px;
-    margin-top: 32px;
-    text-align: center;
-  }
-  .roi-box p {
-    font-size: 15px;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.7;
-  }
+  .revenue-row { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .revenue-row .r-label { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 450px; }
+  .revenue-row .r-value { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--amber-light); text-align: right; white-space: nowrap; }
+  .roi-box { background: rgba(180,83,9,0.12); border: 1px solid rgba(180,83,9,0.2); border-radius: 12px; padding: 24px; margin-top: 32px; text-align: center; }
+  .roi-box p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; }
   .roi-box strong { color: var(--amber-light); }
 
-  /* ===== ROADMAP ===== */
-  .phase-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-top: 40px;
-  }
-  @media (max-width: 768px) { .phase-grid { grid-template-columns: 1fr; } }
-  .phase-card {
-    background: var(--warm-white);
-    border: 2px solid var(--stone-200);
-    border-radius: 20px;
-    padding: 36px;
-    position: relative;
-    overflow: hidden;
-  }
-  .phase-card.primary {
-    border-color: var(--amber);
-    box-shadow: 0 0 0 1px var(--amber), 0 8px 32px rgba(180,83,9,0.08);
-  }
-  .phase-card .phase-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--stone-400);
-    margin-bottom: 8px;
-  }
-  .phase-card .phase-price {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--stone-900);
-    margin-bottom: 4px;
-  }
-  .phase-card .phase-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--stone-800);
-    margin-bottom: 20px;
-  }
-  .phase-card ul {
-    list-style: none;
-    padding: 0;
-  }
-  .phase-card li {
-    font-size: 13px;
-    color: var(--stone-600);
-    padding: 8px 0;
-    border-bottom: 1px solid var(--stone-100);
-    display: flex;
-    gap: 8px;
-    align-items: flex-start;
-    line-height: 1.5;
-  }
-  .phase-card li:last-child { border-bottom: none; }
-  .phase-card li .check {
-    color: var(--sage);
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-  .phase-note {
-    margin-top: 16px;
-    padding: 12px 16px;
-    background: var(--amber-glow);
-    border-radius: 8px;
-    font-size: 12px;
-    color: var(--amber-deep);
-    font-weight: 600;
+  /* ROADMAP */
+  .timeline { margin-top: 40px; position: relative; padding-left: 40px; }
+  .timeline::before { content: ''; position: absolute; left: 14px; top: 0; bottom: 0; width: 2px; background: var(--stone-200); }
+  .tl-item { position: relative; margin-bottom: 40px; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-dot { position: absolute; left: -40px; top: 4px; width: 28px; height: 28px; border-radius: 50%; background: var(--amber); display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: 700; z-index: 1; }
+  .tl-item h4 { font-size: 16px; font-weight: 700; color: var(--stone-800); margin-bottom: 4px; }
+  .tl-item .tl-sub { font-size: 12px; color: var(--amber); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .tl-item ul { list-style: none; padding: 0; }
+  .tl-item li { font-size: 13px; color: var(--stone-600); padding: 4px 0; padding-left: 18px; position: relative; line-height: 1.5; }
+  .tl-item li::before { content: '\2713'; position: absolute; left: 0; color: var(--sage); font-weight: 700; font-size: 12px; }
+
+  /* PRICING */
+  .pricing-box {
+    background: var(--warm-white); border: 2px solid var(--amber);
+    border-radius: 20px; padding: 40px; margin-top: 48px;
+    box-shadow: 0 8px 32px rgba(180,83,9,0.08);
     text-align: center;
+  }
+  .pricing-box .price-main {
+    font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700;
+    color: var(--stone-900); margin-bottom: 4px;
+  }
+  .pricing-box .price-sub { font-size: 16px; color: var(--stone-500); margin-bottom: 8px; }
+  .pricing-box .price-total { font-size: 13px; color: var(--stone-400); margin-bottom: 24px; }
+  .pricing-box .price-note {
+    background: var(--amber-glow); border-radius: 8px; padding: 12px 16px;
+    font-size: 13px; color: var(--amber-deep); font-weight: 600; display: inline-block;
   }
 
-  /* ===== WALKAWAY ===== */
-  .walkaway-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    margin-top: 40px;
-  }
-  .wa-card {
-    background: var(--warm-white);
-    border: 1px solid var(--stone-200);
-    border-radius: 12px;
-    padding: 24px;
-    text-align: center;
-  }
-  .wa-card .wa-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--amber);
-  }
-  .wa-card .wa-label {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--stone-600);
-    margin-top: 4px;
-    line-height: 1.4;
-  }
+  /* WALKAWAY */
+  .walkaway-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 40px; }
+  .wa-card { background: var(--warm-white); border: 1px solid var(--stone-200); border-radius: 12px; padding: 24px; text-align: center; }
+  .wa-card .wa-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--amber); }
+  .wa-card .wa-label { font-size: 12px; font-weight: 600; color: var(--stone-600); margin-top: 4px; line-height: 1.4; }
 
-  /* ===== CTA ===== */
-  .cta-section {
-    background: var(--stone-900);
-    color: white;
-    padding: 100px 40px;
-    text-align: center;
-  }
-  .cta-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 4vw, 40px);
-    color: rgba(255,255,255,0.95);
-    margin-bottom: 16px;
-  }
-  .cta-section p {
-    font-size: 16px;
-    color: rgba(255,255,255,0.5);
-    max-width: 500px;
-    margin: 0 auto 40px;
-    line-height: 1.7;
-  }
-  .cta-btn {
-    display: inline-block;
-    background: var(--amber);
-    color: white;
-    padding: 16px 40px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: background 0.3s, transform 0.2s;
-  }
+  /* CTA */
+  .cta-section { background: var(--stone-900); color: white; padding: 100px 40px; text-align: center; }
+  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 40px); color: rgba(255,255,255,0.95); margin-bottom: 16px; }
+  .cta-section p { font-size: 16px; color: rgba(255,255,255,0.5); max-width: 500px; margin: 0 auto 40px; line-height: 1.7; }
+  .cta-btn { display: inline-block; background: var(--amber); color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; transition: background 0.3s, transform 0.2s; }
   .cta-btn:hover { background: var(--amber-light); transform: translateY(-1px); }
 
-  /* ===== FOOTER ===== */
-  .footer {
-    background: var(--stone-900);
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 30px 40px;
-    text-align: center;
-  }
-  .footer p {
-    font-size: 12px;
-    color: rgba(255,255,255,0.3);
-  }
+  .footer { background: var(--stone-900); border-top: 1px solid rgba(255,255,255,0.06); padding: 30px 40px; text-align: center; }
+  .footer p { font-size: 12px; color: rgba(255,255,255,0.3); }
 
-  /* ===== QUOTE BLOCK ===== */
-  .insight-box {
-    background: var(--warm-white);
-    border-left: 3px solid var(--amber);
-    border-radius: 0 12px 12px 0;
-    padding: 24px 28px;
-    margin: 32px 0;
-  }
-  .insight-box p {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-style: italic;
-    color: var(--stone-700);
-    line-height: 1.6;
-  }
-  .insight-box .source {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-style: normal;
-    color: var(--stone-400);
-    margin-top: 8px;
-  }
+  .insight-box { background: var(--warm-white); border-left: 3px solid var(--amber); border-radius: 0 12px 12px 0; padding: 24px 28px; margin: 32px 0; }
+  .insight-box p { font-family: 'Playfair Display', serif; font-size: 18px; font-style: italic; color: var(--stone-700); line-height: 1.6; }
 
-  /* ===== DOMAINS ===== */
-  .domain-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
-    margin: 24px 0;
-  }
-  .domain-item {
-    background: var(--warm-white);
-    border: 1px solid var(--stone-200);
-    border-radius: 8px;
-    padding: 14px 16px;
-  }
-  .domain-item.issue { border-color: #FCA5A5; background: #FFF5F5; }
-  .domain-item .d-url { font-size: 13px; font-weight: 600; color: var(--stone-800); }
-  .domain-item .d-desc { font-size: 11px; color: var(--stone-400); }
-
-  /* ===== MOBILE ===== */
   @media (max-width: 768px) {
-    .nav { padding: 12px 20px; }
-    .nav-links { display: none; }
-    .hero { padding: 120px 24px 80px; min-height: auto; }
-    .hero-stats { gap: 24px; }
+    .nav { padding: 12px 20px; } .nav-links { display: none; }
+    .hero { padding: 120px 24px 80px; min-height: auto; } .hero-stats { gap: 24px; }
     .section, .section-wide { padding: 60px 24px; }
-    .voice-bg, .revenue-bg, .cta-section { padding: 60px 24px; }
+    .voice-bg, .revenue-bg, .cta-section, .personal-bg, .retreat-hero-bg { padding: 60px 24px; }
     .engine-flow { grid-template-columns: 1fr; }
     .revenue-row { flex-direction: column; gap: 4px; align-items: flex-start; }
     .revenue-row .r-value { font-size: 20px; }
+    .personal-inner { flex-direction: column; align-items: center; text-align: center; }
   }
 </style>
 </head>
@@ -778,12 +323,12 @@
 
 <!-- NAV -->
 <nav class="nav">
-  <div class="nav-brand">Elevate AI Systems</div>
+  <div class="nav-brand">Sunny Binjola &middot; Elevate AI</div>
   <ul class="nav-links">
-    <li><a href="#snapshot">Snapshot</a></li>
-    <li><a href="#scorecard">Audit</a></li>
+    <li><a href="#strengths">Strengths</a></li>
+    <li><a href="#audit">The Audit</a></li>
     <li><a href="#voice">Your Voice</a></li>
-    <li><a href="#engine">Content Engine</a></li>
+    <li><a href="#retreat-system">Retreat System</a></li>
     <li><a href="#revenue">Revenue</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
   </ul>
@@ -800,8 +345,8 @@
     </h1>
     <p class="hero-subtitle">
       We analyzed your entire digital presence, listened to 63,000 words of your podcast,
-      and mapped the gap between the quality of your work and the visibility of your brand.
-      Here's what we found.
+      and mapped the space between the depth of your work and the reach of your brand.
+      Here's what we see.
     </p>
     <div class="hero-stats">
       <div class="hero-stat">
@@ -824,110 +369,170 @@
   </div>
 </section>
 
-<!-- SNAPSHOT -->
-<section class="section" id="snapshot">
-  <div class="section-label">The Snapshot</div>
-  <h2>Where you stand <em>today</em></h2>
-  <p class="section-intro">
-    You're operating at the expertise level of a million-dollar business with the marketing infrastructure of a $200K one. The work is extraordinary. The systems haven't caught up yet.
-  </p>
-
-  <div class="two-col">
-    <div class="list-card">
-      <h3><span style="color: var(--sage);">&#9679;</span> What's Working Beautifully</h3>
-      <ul>
-        <li><span class="icon">&#10003;</span><span><strong>World-class expertise</strong> &mdash; 20 years facilitating retreats globally. Own retreat center in Portugal. ISTA-trained. Internationally recognized authority.</span></li>
-        <li><span class="icon">&#10003;</span><span><strong>High-value clients</strong> &mdash; $48K annual buy-in for 1:1 coaching. 5-7 active clients at any time. This is premium positioning.</span></li>
-        <li><span class="icon">&#10003;</span><span><strong>Active retreat pipeline</strong> &mdash; Nicaragua, Portugal, Colorado, Bali. 15-20 retreats per year across multiple continents.</span></li>
-        <li><span class="icon">&#10003;</span><span><strong>Authentic podcast</strong> &mdash; 70+ episodes of "Love, Sex, and Leadership" with genuine depth and real conversations.</span></li>
-        <li><span class="icon">&#10003;</span><span><strong>Social proof</strong> &mdash; Published author. Masters degree. 1,000+ testimonials worth of work. Genuine credibility.</span></li>
-      </ul>
-    </div>
-    <div class="list-card">
-      <h3><span style="color: var(--terra);">&#9679;</span> Where the Gap Is</h3>
-      <ul>
-        <li><span class="icon">&#9888;</span><span><strong>No lead magnets</strong> &mdash; No downloadable assets pulling new people into your world. Visitors come, look around, leave.</span></li>
-        <li><span class="icon">&#9888;</span><span><strong>70 episodes of gold, unmined</strong> &mdash; Your podcast isn't being repurposed into carousels, reels, blog posts, or emails.</span></li>
-        <li><span class="icon">&#9888;</span><span><strong>YouTube: zero engagement</strong> &mdash; 192 videos, 551 subscribers. No shorts, no clips, no thumbnails optimized for discovery.</span></li>
-        <li><span class="icon">&#9888;</span><span><strong>No organic search presence</strong> &mdash; No blog. No SEO content. All traffic relies on brand-name searches and social links.</span></li>
-        <li><span class="icon">&#9888;</span><span><strong>Domain fragmentation</strong> &mdash; 5+ separate websites splitting your authority instead of concentrating it.</span></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="domain-list" style="margin-top: 32px;">
-    <div class="domain-item">
-      <div class="d-url">aaronkleinerman.com</div>
-      <div class="d-desc">Main site (Ontraport) &mdash; primary</div>
-    </div>
-    <div class="domain-item">
-      <div class="d-url">embody.aaronkleinerman.com</div>
-      <div class="d-desc">Group coaching program</div>
-    </div>
-    <div class="domain-item issue">
-      <div class="d-url">theinitiationjourney.com</div>
-      <div class="d-desc">Men's retreats &mdash; separate brand, dilutes SEO</div>
-    </div>
-    <div class="domain-item issue">
-      <div class="d-url">ecstatictantra.org</div>
-      <div class="d-desc">Practitioner training &mdash; no cross-linking</div>
-    </div>
-    <div class="domain-item issue">
-      <div class="d-url">theintegratedbeing.com</div>
-      <div class="d-desc">Masterclass series &mdash; isolated</div>
+<!-- PERSONAL NOTE FROM SUNNY -->
+<section class="personal-bg">
+  <div class="personal-inner">
+    <div class="personal-avatar">S</div>
+    <div class="personal-text">
+      <p><strong>Aaron, a quick note from me.</strong></p>
+      <p>I'm not just a tech guy pitching marketing. I'm an embodiment coach and men's work facilitator myself. I know what it means to hold space for men. I know the depth of what happens in those containers. I also build systems.</p>
+      <p>That's why I'm reaching out to you and not to every coach on Instagram. <strong>I understand your world from the inside</strong> &mdash; and I understand the systems that can carry your voice further without diluting it. Think of me as the bridge between the embodied world you live in and the digital infrastructure that brings people to your door.</p>
+      <p>Everything in this page is built on that bridge: your humanity first, technology behind the curtain.</p>
+      <div class="personal-name">Sunny Binjola &mdash; Founder, Elevate AI Systems</div>
     </div>
   </div>
 </section>
 
-<!-- SCORECARD -->
+<!-- PHILOSOPHY -->
+<section class="section" id="philosophy">
+  <div class="section-label">Our Philosophy</div>
+  <h2>Your humanity first.<br><em>Technology behind the curtain.</em></h2>
+  <p class="section-intro">You said it clearly on our call: nothing should feel like AI wrote it. Nothing should replace human connection. Here's how we honor that.</p>
+
+  <div class="philosophy-grid">
+    <div class="phil-card">
+      <h4>Your Voice, Never Ours</h4>
+      <p>We start by extracting YOUR voice patterns from YOUR podcast &mdash; your phrases, your cadence, your teaching style. Every piece of content sounds like you because it comes from you. We amplify, never replace.</p>
+    </div>
+    <div class="phil-card">
+      <h4>Human Eyes on Everything</h4>
+      <p>Nothing posts without you or your person reviewing it. AI handles the volume and the drafts. You handle the vibe. This is your preference and our promise.</p>
+    </div>
+    <div class="phil-card">
+      <h4>Built for You to Own</h4>
+      <p>Nothing locked behind our platform. Every system, template, SOP, and process is yours. After 6 months, you or your team run it independently. We build the machine &mdash; you drive it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S EXTRAORDINARY -->
 <div class="divider"><hr></div>
 
-<section class="section" id="scorecard">
-  <div class="section-label">External Audit</div>
-  <h2>The <em>honest</em> scorecard</h2>
-  <p class="section-intro">We audited every public-facing asset: website, social, podcast, domains, funnels, and content. Here's where each area stands.</p>
+<section class="section" id="strengths">
+  <div class="section-label">What's Extraordinary</div>
+  <h2>What we see that's <em>already working</em></h2>
+  <p class="section-intro">Before we talk about what to build, let's honor what's already here. This is the foundation everything gets built on.</p>
 
   <div class="scorecard-grid">
     <div class="score-card">
-      <span class="badge badge-strong">Strong</span>
+      <span class="badge badge-strong">World-Class</span>
       <div class="score-label">Authority & Credibility</div>
-      <div class="score-desc">20 years experience, 1,000+ clients, international bestseller, master's degree. Genuinely world-class positioning.</div>
+      <div class="score-desc">20 years experience. 1,000+ clients. International bestselling author. Master's degree. ISTA-trained. Own retreat center in Portugal. This is genuinely rare positioning.</div>
     </div>
     <div class="score-card">
       <span class="badge badge-strong">Strong</span>
       <div class="score-label">Product Suite</div>
-      <div class="score-desc">Complete value ladder from free masterclasses to $2,450 retreats to $48K coaching. Well-structured offers.</div>
+      <div class="score-desc">Complete value ladder from free masterclasses to $2,450 retreats to $48K/yr 1:1 coaching. 5-7 active high-value clients. Well-structured, premium offers.</div>
+    </div>
+    <div class="score-card">
+      <span class="badge badge-strong">Strong</span>
+      <div class="score-label">Retreat Pipeline</div>
+      <div class="score-desc">15-20 retreats per year across Nicaragua, Portugal, Colorado, Bali. Your own center in Portugal. This physical asset is a massive brand anchor.</div>
+    </div>
+    <div class="score-card">
+      <span class="badge badge-strong">Strong</span>
+      <div class="score-label">Content Depth</div>
+      <div class="score-desc">70+ podcast episodes of "Love, Sex, and Leadership" with genuine depth. Published book. Real conversations, not surface-level content.</div>
     </div>
     <div class="score-card">
       <span class="badge badge-strong">Strong</span>
       <div class="score-label">Social Proof</div>
-      <div class="score-desc">Real depth of experience. Genuine testimonials. Named retreat locations worldwide. Authentic, not manufactured.</div>
+      <div class="score-desc">Real depth of experience. Genuine testimonials. Named retreat locations worldwide. John Waln connection. Authentic, not manufactured.</div>
+    </div>
+  </div>
+
+  <div class="insight-box" style="margin-top: 32px;">
+    <p>"You're operating at the expertise level of a million-dollar business. The systems that bring people to your work just haven't caught up to the quality of the work itself."</p>
+  </div>
+</section>
+
+<!-- OPPORTUNITIES -->
+<div class="divider"><hr></div>
+
+<section class="section" id="opportunities">
+  <div class="section-label">Opportunities</div>
+  <h2>Where systems can <em>multiply your reach</em></h2>
+  <p class="section-intro">These aren't weaknesses &mdash; they're opportunities. Your work is extraordinary. These are the places where the right systems can carry it further.</p>
+
+  <div class="scorecard-grid">
+    <div class="score-card">
+      <span class="badge badge-opp">Opportunity</span>
+      <div class="score-label">Podcast Not Yet Multiplied</div>
+      <div class="score-desc">70+ episodes of gold distributed but not repurposed. Each episode could become 8-10 pieces of content &mdash; carousels, reels, blog posts, email sequences &mdash; all in your voice.</div>
     </div>
     <div class="score-card">
-      <span class="badge badge-ok">Partial</span>
-      <div class="score-label">Content Engine</div>
-      <div class="score-desc">70+ podcast episodes are gold. But no repurposing system. Content goes out once and dies. YouTube has near-zero engagement.</div>
+      <span class="badge badge-opp">Opportunity</span>
+      <div class="score-label">No Lead Magnets</div>
+      <div class="score-desc">No downloadable assets pulling new people into your world. Your book, your teachings, your practices &mdash; these can become powerful email capture tools that nurture people toward retreats.</div>
     </div>
     <div class="score-card">
-      <span class="badge badge-ok">Dated</span>
-      <div class="score-label">Website UX</div>
-      <div class="score-desc">Ontraport-built site works but looks dated. 6 free masterclasses with no clear entry point. Visitors don't know where to start.</div>
+      <span class="badge badge-opp">Opportunity</span>
+      <div class="score-label">Organic Search Untapped</div>
+      <div class="score-desc">No blog. No SEO content. All traffic relies on people already knowing your name. The right articles could bring men searching for "embodiment retreats" or "men's work" directly to you.</div>
     </div>
     <div class="score-card">
-      <span class="badge badge-weak">Weak</span>
-      <div class="score-label">Funnel & Conversion</div>
-      <div class="score-desc">No visible email nurture. No pricing on offers. Application-only with no context. No lead magnets capturing interest.</div>
+      <span class="badge badge-opp">Opportunity</span>
+      <div class="score-label">YouTube Untapped</div>
+      <div class="score-desc">192 videos, 551 subscribers. The content is there &mdash; the optimization isn't. Better titles, thumbnails, and clips from your podcast could turn this into a discovery engine.</div>
     </div>
     <div class="score-card">
-      <span class="badge badge-weak">Weak</span>
-      <div class="score-label">SEO & Discovery</div>
-      <div class="score-desc">No blog. No content strategy. No search-optimized pages. All organic traffic relies on people already knowing your name.</div>
+      <span class="badge badge-opp">Opportunity</span>
+      <div class="score-label">Ontraport Underutilized</div>
+      <div class="score-desc">You're already paying for a powerful CRM. With proper email sequences, tagging, and automation, Ontraport can nurture leads 24/7 in your voice without you touching it.</div>
     </div>
     <div class="score-card">
-      <span class="badge badge-bottleneck">Bottleneck</span>
-      <div class="score-label">Scaling Model</div>
-      <div class="score-desc">Revenue is capped by your personal calendar. Every dollar requires your direct time. No leverage through digital products or automated funnels.</div>
+      <span class="badge badge-opp">Opportunity</span>
+      <div class="score-label">Book as Lead Engine</div>
+      <div class="score-desc">You're an international bestselling author. Your book can be leveraged as a lead magnet, SEO authority builder, and entry point into your world. It's not being used that way yet.</div>
     </div>
+  </div>
+</section>
+
+<!-- THE AUDIT -->
+<div class="divider"><hr></div>
+
+<section class="section" id="audit">
+  <div class="section-label">The Deep Audit</div>
+  <h2>Before we build anything,<br>we <em>understand everything</em></h2>
+  <p class="section-intro">
+    The first step isn't content creation or system building. It's deep understanding. We study your business from the outside in, learn how your team works, understand your processes, and map the real landscape before making a single recommendation.
+  </p>
+
+  <div class="audit-grid">
+    <div class="audit-card">
+      <div class="audit-num">01</div>
+      <h4>Voice & Brand Analysis</h4>
+      <p>Deep analysis of your podcast, book, and content. Extracting your signature phrases, content pillars, teaching patterns, and tone. This becomes the voice library everything is built from.</p>
+    </div>
+    <div class="audit-card">
+      <div class="audit-num">02</div>
+      <h4>Business & Systems Audit</h4>
+      <p>Understanding your current processes, Ontraport setup, team workflows, how retreats get marketed today, what your team handles vs. what falls through the cracks. Seeing the business from the outside helps surface what can be streamlined.</p>
+    </div>
+    <div class="audit-card">
+      <div class="audit-num">03</div>
+      <h4>Team & People Understanding</h4>
+      <p>Getting to know the people working in your business &mdash; who does what, how they work, what tools they use. The systems we build need to fit the humans running them, not the other way around.</p>
+    </div>
+    <div class="audit-card">
+      <div class="audit-num">04</div>
+      <h4>Competitive Landscape</h4>
+      <p>How you compare to other men's retreat leaders in SEO, social presence, and positioning. Where you're ahead, where others have systems you don't, and where the whitespace is.</p>
+    </div>
+    <div class="audit-card">
+      <div class="audit-num">05</div>
+      <h4>SEO Opportunity Map</h4>
+      <p>The keywords and content topics that could drive organic traffic to your retreat pages. What men are actually searching for, and where your expertise can meet that demand.</p>
+    </div>
+    <div class="audit-card">
+      <div class="audit-num">06</div>
+      <h4>Domain & Funnel Architecture</h4>
+      <p>Mapping the 5+ domains, understanding which serve you and which dilute. Reviewing the funnel from first-touch to retreat signup. Identifying where visitors get lost and where conversion breaks.</p>
+    </div>
+  </div>
+
+  <div class="insight-box" style="margin-top: 32px;">
+    <p>"The audit isn't about finding faults. It's about seeing clearly &mdash; what's working, what's ready to grow, and where the leverage points are."</p>
   </div>
 </section>
 
@@ -955,7 +560,7 @@
       <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px;">
         <div style="font-size: 11px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Energy</div>
         <div style="font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.9);">Grounded Authority</div>
-        <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px;">20 years shows. You don't need to prove anything. Comfortable with silence, mystery, and the divine. Unapologetically spiritual.</div>
+        <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px;">20 years shows. You don't need to prove anything. Comfortable with silence, mystery, and the divine.</div>
       </div>
     </div>
 
@@ -974,36 +579,52 @@
       <span class="phrase phrase-sm">what gets to be birthed</span>
       <span class="phrase phrase-sm">what would it feel like</span>
       <span class="phrase phrase-sm">awaken your soul's wisdom</span>
-      <span class="phrase phrase-sm">permission to</span>
     </div>
 
     <div style="font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; margin-top: 48px;">5 Content Pillars</div>
-    <p style="font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 20px;">Extracted from frequency analysis across all 9 episodes. These are the themes you return to naturally.</p>
+    <p style="font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 20px;">Extracted from frequency analysis across 9 episodes. These are the themes you return to naturally.</p>
     <div class="pillar-grid">
-      <div class="pillar">
-        <div class="p-icon">&#10084;&#65039;</div>
-        <div class="p-name">Love & Relationship</div>
-        <div class="p-count">411 mentions</div>
+      <div class="pillar"><div class="p-icon">&#10084;&#65039;</div><div class="p-name">Love & Relationship</div><div class="p-count">411 mentions</div></div>
+      <div class="pillar"><div class="p-icon">&#9876;&#65039;</div><div class="p-name">Masculine Awakening</div><div class="p-count">300 mentions</div></div>
+      <div class="pillar"><div class="p-icon">&#128524;</div><div class="p-name">Body & Embodiment</div><div class="p-count">127 mentions</div></div>
+      <div class="pillar"><div class="p-icon">&#10024;</div><div class="p-name">Spirit & Surrender</div><div class="p-count">109 mentions</div></div>
+      <div class="pillar"><div class="p-icon">&#127761;</div><div class="p-name">Shadow & Healing</div><div class="p-count">102 mentions</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RETREAT LAUNCH SYSTEM (HERO) -->
+<section class="retreat-hero-bg" id="retreat-system">
+  <div class="retreat-hero-inner">
+    <div class="section-label">The One System That Changes Everything</div>
+    <h2>The Retreat <em>Launch Machine</em></h2>
+    <p style="font-size: 16px; color: rgba(255,255,255,0.5); max-width: 640px; line-height: 1.8; margin-bottom: 16px;">
+      You run 15-20 retreats a year. Each one needs marketing. Right now that marketing is ad hoc &mdash; manual posts, word of mouth, last-minute pushes. What if every retreat had a proven, reusable launch sequence that fills seats while you focus on facilitation?
+    </p>
+    <p style="font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 0;">
+      One system. Reusable for every retreat, every location. Colorado October. Portugal spring. Bali summer. Same playbook, adapted to each.
+    </p>
+
+    <div class="retreat-steps">
+      <div class="retreat-step">
+        <div class="rs-week">Week 1-3</div>
+        <div class="rs-title">Announce & Seed</div>
+        <div class="rs-desc">Email announcement to your list. Teaser carousels. Early-bird pricing. Alumni outreach.</div>
       </div>
-      <div class="pillar">
-        <div class="p-icon">&#9876;&#65039;</div>
-        <div class="p-name">Masculine Awakening</div>
-        <div class="p-count">300 mentions</div>
+      <div class="retreat-step">
+        <div class="rs-week">Week 4-8</div>
+        <div class="rs-title">Build & Nurture</div>
+        <div class="rs-desc">Testimony carousels from past retreaters. Behind-the-scenes reels. Email drip with retreat philosophy.</div>
       </div>
-      <div class="pillar">
-        <div class="p-icon">&#128524;</div>
-        <div class="p-name">Body & Embodiment</div>
-        <div class="p-count">127 mentions</div>
+      <div class="retreat-step">
+        <div class="rs-week">Week 9-11</div>
+        <div class="rs-title">Convert & Close</div>
+        <div class="rs-desc">Urgency triggers: limited spots, countdown. DM outreach to warm leads. Application push with clear next step.</div>
       </div>
-      <div class="pillar">
-        <div class="p-icon">&#10024;</div>
-        <div class="p-name">Spirit & Surrender</div>
-        <div class="p-count">109 mentions</div>
-      </div>
-      <div class="pillar">
-        <div class="p-icon">&#127761;</div>
-        <div class="p-name">Shadow & Healing</div>
-        <div class="p-count">102 mentions</div>
+      <div class="retreat-step">
+        <div class="rs-week">Week 12</div>
+        <div class="rs-title">Fill Final Seats</div>
+        <div class="rs-desc">Last-call email. Social proof blast. Personal video from you. Final seats at full price.</div>
       </div>
     </div>
   </div>
@@ -1013,90 +634,69 @@
 <section class="section-wide" id="engine">
   <div style="max-width: 1000px; margin: 0 auto;">
     <div class="section-label">The Content Engine</div>
-    <h2>70 podcast episodes become <em>200+ pieces</em> of content</h2>
+    <h2>Your podcast becomes a <em>content machine</em></h2>
     <p class="section-intro">
-      You already have the raw material. You've recorded hundreds of hours of your authentic voice. Right now it goes out once and dies. Here's what it becomes with a system.
+      You've already recorded the raw material. 70+ episodes of your authentic voice. Right now each episode is distributed but not multiplied. Here's what each one becomes with a system.
     </p>
 
     <div class="engine-flow">
-      <div class="engine-box">
-        <div class="e-num">70</div>
-        <div class="e-label">Podcast Episodes</div>
-      </div>
+      <div class="engine-box"><div class="e-num">1</div><div class="e-label">Podcast Episode</div></div>
       <div class="engine-arrow">&#10230;</div>
-      <div class="engine-box">
-        <div class="e-num">63K</div>
-        <div class="e-label">Words of Your Voice</div>
-      </div>
+      <div class="engine-box"><div class="e-num">AI</div><div class="e-label">Voice-Matched Drafts</div></div>
       <div class="engine-arrow">&#10230;</div>
-      <div class="engine-box" style="border-color: var(--amber);">
-        <div class="e-num">200+</div>
-        <div class="e-label">Content Pieces</div>
-      </div>
+      <div class="engine-box" style="border-color: var(--amber);"><div class="e-num">8-10</div><div class="e-label">Content Pieces</div></div>
     </div>
 
     <div class="content-type-grid">
       <div class="ct-card">
         <div class="ct-icon">&#128444;&#65039;</div>
         <h4>Instagram Carousels</h4>
-        <p>Quote-driven teaching carousels using your actual words. Branded, in your voice, driving to retreat signups. Not generic motivational posts.</p>
-        <div class="ct-count">30+</div>
+        <p>Teaching carousels using your actual words and content pillars. Branded, in your voice, each one driving toward a retreat signup or lead magnet download.</p>
       </div>
       <div class="ct-card">
         <div class="ct-icon">&#127909;</div>
         <h4>Short-Form Reels</h4>
-        <p>Podcast clips, talking-head hooks, breathwork snippets, behind-the-scenes retreat footage. Optimized for discovery.</p>
-        <div class="ct-count">20+</div>
+        <p>Podcast clips, talking-head hooks, breathwork snippets. The kind of content that stops the scroll and makes men think "I need to be in that room."</p>
       </div>
       <div class="ct-card">
         <div class="ct-icon">&#128221;</div>
         <h4>SEO Blog Posts</h4>
-        <p>Long-form articles targeting searches like "men's retreats," "embodiment coaching," "tantric leadership." Driving organic traffic.</p>
-        <div class="ct-count">8+</div>
+        <p>Long-form articles targeting searches like "men's retreats," "embodiment coaching," "tantric leadership." Bringing organic traffic from men actively searching.</p>
       </div>
       <div class="ct-card">
         <div class="ct-icon">&#127873;</div>
         <h4>Lead Magnets</h4>
-        <p>"The Body Temple Guide," "Shadow Inventory," "Love, Sex & Leadership Self-Assessment." Email capture tools that match your teaching.</p>
-        <div class="ct-count">2-3</div>
+        <p>"The Body Temple Guide," "Shadow Inventory," or chapters from your book. Email capture tools that match your teaching and nurture toward retreats.</p>
       </div>
       <div class="ct-card">
         <div class="ct-icon">&#9993;&#65039;</div>
         <h4>Email Sequences</h4>
-        <p>Welcome nurture, retreat launch campaigns, weekly wisdom drops. All wired to Ontraport, all in your voice.</p>
-        <div class="ct-count">3-4</div>
-      </div>
-      <div class="ct-card">
-        <div class="ct-icon">&#127916;</div>
-        <h4>YouTube Shorts</h4>
-        <p>Clips from existing 192 videos. Optimized thumbnails. Shorts from podcast highlights. Turning a dead channel into a discovery engine.</p>
-        <div class="ct-count">40+</div>
+        <p>Welcome nurture, retreat launch campaigns, weekly wisdom drops. All wired to your existing Ontraport, all in your voice, running on autopilot.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SYSTEMS & SOPS -->
+<!-- SYSTEMS -->
 <div class="divider"><hr></div>
 
 <section class="section" id="systems">
-  <div class="section-label">Systems & SOPs</div>
-  <h2>One person. <em>Clear playbooks.</em><br>Everything runs without you.</h2>
+  <div class="section-label">Systems & Playbooks</div>
+  <h2>Documented processes<br>your team can <em>run without you</em></h2>
   <p class="section-intro">
-    We don't just create content. We build the machine that creates it, the workflows that run it, and the SOPs that mean one person (or one AI) can keep it going after we leave.
+    Every system we build comes with a documented SOP. One person on your team &mdash; or even a part-time VA &mdash; can run the entire content and marketing operation using these playbooks.
   </p>
 
   <div class="sop-grid">
     <div class="sop-card">
-      <h4>&#128197; Content Calendar SOP</h4>
+      <h4>&#128197; Weekly Content Calendar</h4>
       <ul>
-        <li>Weekly posting rhythm tied to retreat schedule</li>
-        <li>Monday: teaching carousel (Masculine Awakening)</li>
-        <li>Tuesday: embodiment reel (breathwork, practice)</li>
-        <li>Thursday: relationship / love carousel</li>
-        <li>Friday: shadow / truth-bomb reel</li>
+        <li>Posting rhythm tied to your retreat schedule</li>
+        <li>Each post traced to a content pillar + revenue goal</li>
+        <li>Monday: teaching carousel</li>
+        <li>Thursday: love/relationship carousel</li>
+        <li>Friday: reel (breathwork, truth bomb, or BTS)</li>
         <li>Sunday: podcast clip repurpose</li>
-        <li>Each piece traced to a content pillar + revenue goal</li>
       </ul>
     </div>
     <div class="sop-card">
@@ -1107,61 +707,39 @@
         <li>Quotes routed to carousel templates</li>
         <li>Key clips cut into 30-60s reels</li>
         <li>Blog post drafted from transcript themes</li>
-        <li>One episode = 8-10 content pieces</li>
+        <li>Human reviews everything before posting</li>
       </ul>
     </div>
     <div class="sop-card">
       <h4>&#9992;&#65039; Retreat Launch Playbook</h4>
       <ul>
-        <li>12-week launch sequence per retreat</li>
+        <li>12-week launch sequence (reusable every time)</li>
         <li>Email drip: 8 emails from announcement to close</li>
         <li>Social campaign: countdown carousels + reels</li>
         <li>Testimonial assets from past retreaters</li>
         <li>Urgency triggers: early-bird, limited spots, alumni pricing</li>
-        <li>Reusable for every retreat, every location</li>
+        <li>Adaptable for any location, any retreat type</li>
       </ul>
     </div>
     <div class="sop-card">
       <h4>&#128200; Lead Magnet Funnel</h4>
       <ul>
-        <li>Landing page on aaronkleinerman.com</li>
-        <li>Downloadable guide (from your content pillars)</li>
-        <li>Ontraport email capture + tag</li>
+        <li>Landing page on your existing site</li>
+        <li>Downloadable guide from your content pillars or book</li>
+        <li>Ontraport email capture + tag + automation</li>
         <li>5-email welcome sequence in your voice</li>
         <li>Soft CTA to retreat or free masterclass</li>
-        <li>Automated, runs 24/7, fills your list while you sleep</li>
-      </ul>
-    </div>
-    <div class="sop-card">
-      <h4>&#128373;&#65039; Brand Consolidation</h4>
-      <ul>
-        <li>Audit all 5+ domains for redundancy</li>
-        <li>Redirect strategy: funnel all traffic to one hub</li>
-        <li>Cross-linking architecture for SEO juice</li>
-        <li>Unified visual identity across platforms</li>
-        <li>One "brand bible" your team can follow</li>
-        <li>One domain. One authority. One searchable brand.</li>
-      </ul>
-    </div>
-    <div class="sop-card">
-      <h4>&#129302; AI-Assisted (Human-Led)</h4>
-      <ul>
-        <li>AI drafts in your voice (from voice library)</li>
-        <li>You or your person reviews &amp; approves</li>
-        <li>Nothing posts without human eyes</li>
-        <li>AI handles volume; you handle vibe</li>
-        <li>SOPs documented so anyone can follow</li>
-        <li>Your preference: human touch first, AI efficiency behind</li>
+        <li>Runs 24/7, fills your list while you sleep</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- REVENUE MATH -->
+<!-- REVENUE -->
 <section class="revenue-bg" id="revenue">
   <div class="revenue-inner">
     <div class="section-label">The Revenue Math</div>
-    <h2 class="serif">What this <em>actually means</em><br>in dollars</h2>
+    <h2 class="serif">What this <em>actually means</em><br>for your business</h2>
 
     <div style="margin-top: 48px;">
       <div class="revenue-row">
@@ -1176,21 +754,12 @@
         <span class="r-label">If better marketing attracts 1 additional $48K coaching client</span>
         <span class="r-value">+$48,000/yr</span>
       </div>
-      <div class="revenue-row">
-        <span class="r-label">If lead magnets convert 2% of followers into course/program buyers</span>
-        <span class="r-value">+$100K-$150K</span>
-      </div>
-      <div class="revenue-total">
-        <span class="r-label">Conservative additional revenue</span>
-        <span class="r-value">+$247K/yr</span>
-      </div>
     </div>
 
     <div class="roi-box">
       <p>
-        A $10K investment that produces even <strong>one additional coaching client</strong> pays for itself <strong>4.8x over</strong>.
-        Three extra retreat signups per cycle covers it <strong>within the first retreat</strong>.
-        This isn't a cost &mdash; it's the most leveraged spend in your business.
+        For less than what <strong>one 1:1 client pays</strong>, you get a system that brings clients to you for years.
+        Three extra retreat signups per cycle covers the investment <strong>within the first retreat</strong>.
       </p>
     </div>
   </div>
@@ -1199,83 +768,115 @@
 <!-- ROADMAP -->
 <section class="section" id="roadmap">
   <div class="section-label">The Roadmap</div>
-  <h2>Two phases. <em>Clear deliverables.</em><br>Everything is yours to keep.</h2>
+  <h2>Six months. <em>$2K per month.</em><br>Everything is yours to keep.</h2>
   <p class="section-intro">
-    Nothing is locked behind a platform. Every system, template, and SOP is yours. After 3 months, you or your team can run it independently. We build the machine &mdash; you drive it.
+    A 6-month partnership at $2,000/month. Simple, predictable, no big upfront commitment. We build in phases, you see results each month, and everything we create belongs to you.
   </p>
 
-  <div class="phase-grid">
-    <div class="phase-card">
-      <div class="phase-label">Phase 1 &mdash; Starting Point</div>
-      <div class="phase-price">$2,000</div>
-      <div class="phase-title">The Deep Audit</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot">1</div>
+      <div class="tl-sub">Month 1 &mdash; The Deep Audit</div>
+      <h4>Understand Everything</h4>
       <ul>
-        <li><span class="check">&#10003;</span><span><strong>Voice Analysis Report</strong> &mdash; your signature phrases, content pillars, and tone mapped from 63K words</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Competitive Landscape</strong> &mdash; how you compare to other men's retreat leaders in SEO, social, and positioning</span></li>
-        <li><span class="check">&#10003;</span><span><strong>SEO Opportunity Map</strong> &mdash; keywords and content topics that could drive organic traffic to retreats</span></li>
-        <li><span class="check">&#10003;</span><span><strong>30-Day Content Calendar</strong> &mdash; ready-to-execute posting schedule tied to retreat launches</span></li>
-        <li><span class="check">&#10003;</span><span><strong>3 Sample Carousels</strong> &mdash; Instagram carousels in your voice, driving to retreat signups</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Lead Magnet Wireframe</strong> &mdash; downloadable asset designed to capture emails and nurture toward retreats</span></li>
-        <li><span class="check">&#10003;</span><span><strong>90-Minute Strategy Session</strong> &mdash; walk through findings, prioritize, plan next steps</span></li>
+        <li>Full voice analysis from 63K+ words of podcast</li>
+        <li>Business & systems audit (Ontraport, team, workflows)</li>
+        <li>Competitive landscape mapping</li>
+        <li>SEO opportunity map for retreat-related searches</li>
+        <li>Get to know your team, their tools, how they work</li>
+        <li>90-minute strategy session to walk through findings</li>
       </ul>
-      <div class="phase-note">This $2,000 carries over in full to Phase 2 if you proceed.</div>
     </div>
-    <div class="phase-card primary">
-      <div class="phase-label">Phase 2 &mdash; The Full Build</div>
-      <div class="phase-price">$10,000</div>
-      <div class="phase-title">3-Month Growth Container</div>
+    <div class="tl-item">
+      <div class="tl-dot">2</div>
+      <div class="tl-sub">Month 2 &mdash; Foundation</div>
+      <h4>Build the Core Systems</h4>
       <ul>
-        <li><span class="check">&#10003;</span><span><strong>Month 1: Foundation</strong> &mdash; Voice library, content system, 10 branded carousels, email capture wired to Ontraport, lead magnet live</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Month 2: Engine</strong> &mdash; Retreat launch sequence (Colorado Oct), 4 SEO blog posts, YouTube shorts strategy, 10 more carousels</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Month 3: Scale + Handoff</strong> &mdash; Second lead magnet, full SOP documentation, team training, 10 more carousels, everything handed over</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Retreat launch playbook</strong> &mdash; reusable for every retreat, every location</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Brand consolidation</strong> &mdash; domain strategy, unified visual identity, cross-linking</span></li>
-        <li><span class="check">&#10003;</span><span><strong>Weekly strategy calls</strong> &mdash; 30-minute check-ins to review, adjust, optimize</span></li>
+        <li>Voice library created (your phrases, tone, content pillars)</li>
+        <li>First lead magnet live with Ontraport email capture</li>
+        <li>5-email welcome sequence written in your voice</li>
+        <li>First 10 branded carousels designed and posted</li>
+        <li>Content calendar SOP documented for your team</li>
       </ul>
-      <div class="phase-note">$2K audit carries over. Remaining: $8K ($2,667/mo for 3 months or in full with $500 off).</div>
     </div>
+    <div class="tl-item">
+      <div class="tl-dot">3</div>
+      <div class="tl-sub">Month 3 &mdash; Retreat Launch</div>
+      <h4>Fill Colorado October</h4>
+      <ul>
+        <li>12-week retreat launch playbook built and activated</li>
+        <li>Email launch sequence for Colorado October</li>
+        <li>Social campaign: countdown carousels + reels</li>
+        <li>First 2 SEO blog posts published</li>
+        <li>Podcast-to-content pipeline running</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">4</div>
+      <div class="tl-sub">Month 4 &mdash; Engine</div>
+      <h4>Content Machine Running</h4>
+      <ul>
+        <li>10 more carousels (20 total delivered)</li>
+        <li>2 more SEO blog posts (4 total)</li>
+        <li>YouTube optimization pass on top-performing videos</li>
+        <li>Second lead magnet concept + build</li>
+        <li>Ontraport email sequences refined from data</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">5</div>
+      <div class="tl-sub">Month 5 &mdash; Scale</div>
+      <h4>Next Retreat Launch + Book Strategy</h4>
+      <ul>
+        <li>Second retreat launch (Portugal spring or next in line)</li>
+        <li>Book-as-lead-magnet strategy implemented</li>
+        <li>10 more carousels (30 total)</li>
+        <li>Domain consolidation strategy + recommendations</li>
+        <li>Mid-partnership review: what's working, what to double down</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">6</div>
+      <div class="tl-sub">Month 6 &mdash; Handoff</div>
+      <h4>You Own Everything</h4>
+      <ul>
+        <li>Full SOP documentation for every system built</li>
+        <li>Team training: your person can run everything independently</li>
+        <li>Final content batch delivered</li>
+        <li>Brand consolidation roadmap for next 12 months</li>
+        <li>All templates, voice libraries, playbooks transferred</li>
+        <li>Optional: monthly retainer for ongoing support</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pricing-box">
+    <div class="price-main">$2,000/mo</div>
+    <div class="price-sub">6-month partnership</div>
+    <div class="price-total">$12,000 total investment</div>
+    <div class="price-note">Month 1 is the audit. If it doesn't feel right, you walk away with a complete audit report and owe nothing more.</div>
   </div>
 </section>
 
-<!-- WHAT YOU WALK AWAY WITH -->
+<!-- WALKAWAY -->
 <div class="divider"><hr></div>
 
 <section class="section">
-  <div class="section-label">After 3 Months</div>
+  <div class="section-label">After 6 Months</div>
   <h2>What you <em>walk away with</em></h2>
-  <p class="section-intro">
-    Everything below is yours. Not locked behind a subscription. Not dependent on us. Yours to keep, run, and evolve.
-  </p>
+  <p class="section-intro">Everything below is yours. Not locked behind a subscription. Not dependent on us. Yours to keep, run, and evolve forever.</p>
 
   <div class="walkaway-grid">
-    <div class="wa-card">
-      <div class="wa-num">30+</div>
-      <div class="wa-label">Branded Carousels</div>
-    </div>
-    <div class="wa-card">
-      <div class="wa-num">90</div>
-      <div class="wa-label">Days of Content<br>Planned & Posted</div>
-    </div>
-    <div class="wa-card">
-      <div class="wa-num">8+</div>
-      <div class="wa-label">SEO Blog Posts<br>Driving Traffic</div>
-    </div>
-    <div class="wa-card">
-      <div class="wa-num">2</div>
-      <div class="wa-label">Lead Magnets<br>Capturing Emails</div>
-    </div>
-    <div class="wa-card">
-      <div class="wa-num">1</div>
-      <div class="wa-label">Retreat Launch<br>Playbook</div>
-    </div>
-    <div class="wa-card">
-      <div class="wa-num">&#8734;</div>
-      <div class="wa-label">SOPs Your Team<br>Can Run Forever</div>
-    </div>
+    <div class="wa-card"><div class="wa-num">30+</div><div class="wa-label">Branded Carousels</div></div>
+    <div class="wa-card"><div class="wa-num">180</div><div class="wa-label">Days of Content<br>Planned & Posted</div></div>
+    <div class="wa-card"><div class="wa-num">4+</div><div class="wa-label">SEO Blog Posts<br>Driving Traffic</div></div>
+    <div class="wa-card"><div class="wa-num">2</div><div class="wa-label">Lead Magnets<br>Capturing Emails</div></div>
+    <div class="wa-card"><div class="wa-num">2</div><div class="wa-label">Retreat Launches<br>Fully Executed</div></div>
+    <div class="wa-card"><div class="wa-num">&#8734;</div><div class="wa-label">SOPs Your Team<br>Can Run Forever</div></div>
   </div>
 
   <div class="insight-box" style="margin-top: 48px;">
-    <p>"The quality of your work is extraordinary. The systems that bring people to that work just haven't caught up yet. That's all this is &mdash; closing the gap."</p>
+    <p>"We build the machine. You drive it. After 6 months, your team has the playbooks, the templates, and the voice library to keep the engine running &mdash; with or without us."</p>
   </div>
 </section>
 
@@ -1283,14 +884,14 @@
 <section class="cta-section">
   <div class="section-label" style="color: var(--amber-light);">Next Step</div>
   <h2 class="serif">Ready to <em>close the gap?</em></h2>
-  <p>Let's start with the $2K audit. You'll see exactly what's possible before committing to anything more.</p>
-  <a href="https://cal.com/elevateai/discovery-call" class="cta-btn">Book a Call with Sunny</a>
-  <p style="font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 16px;">No pressure. No pitch. Just a conversation about what makes sense for you.</p>
+  <p>Month 1 is the audit. If the findings don't light you up, you walk away with a complete report and owe nothing more. No risk, just clarity.</p>
+  <a href="mailto:sunny.binjola@gmail.com?subject=Let's%20begin%20-%20Aaron%20Kleinerman" class="cta-btn">Let's Begin</a>
+  <p style="font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 16px;">Just reply to start. No forms, no funnels &mdash; a conversation between two men who do this work.</p>
 </section>
 
 <!-- FOOTER -->
 <div class="footer">
-  <p>Prepared for Aaron Kleinerman by Elevate AI Systems &middot; June 2026</p>
+  <p>Prepared for Aaron Kleinerman by Sunny Binjola &middot; Elevate AI Systems &middot; June 2026</p>
   <p style="margin-top: 4px;">This page is private and not indexed by search engines.</p>
 </div>
 
